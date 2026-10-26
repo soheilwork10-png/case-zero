@@ -1,104 +1,216 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#090b14">
-<title>پرونده صفر | اتاق بازجویی</title>
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b14">
+<title>پرونده صفر | بازی کارآگاهی</title>
 <style>
-:root{--bg:#080a12;--panel:#111625;--panel2:#171e30;--cyan:#42f5e9;--pink:#ff3d81;--muted:#9ba8bd;--line:#273149;--text:#eef4ff}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#18334b 0,transparent 38%),radial-gradient(ellipse at 0 40%,#25152f 0,transparent 32%),var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;min-height:100vh}
-button{font:inherit;cursor:pointer} .app{max-width:520px;margin:auto;padding:18px 16px calc(28px + env(safe-area-inset-bottom))}
-.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}.brand{display:flex;gap:10px;align-items:center}.mark{width:42px;height:42px;border:1px solid var(--cyan);border-radius:12px;display:grid;place-items:center;color:var(--cyan);font-size:22px;box-shadow:0 0 20px #42f5e922}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px;margin-bottom:4px}.brand strong{font-size:16px;letter-spacing:.4px}.status{font-size:10px;color:var(--cyan);border:1px solid #42f5e944;border-radius:20px;padding:7px 9px}
-.hero{border:1px solid #ff3d8144;background:linear-gradient(135deg,#1b1526dd,#101827ee);border-radius:20px;padding:20px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:160px;height:160px;border:1px solid #ff3d8128;border-radius:50%;left:-65px;top:-70px;box-shadow:0 0 0 20px #ff3d8108,0 0 0 42px #ff3d8106}.eyebrow{font-size:11px;color:var(--pink);letter-spacing:1px}.hero h1{font-size:27px;margin:12px 0 8px;line-height:1.4}.hero p{color:#bac5d7;font-size:13px;line-height:2;margin:0;max-width:340px}.case-meta{display:flex;gap:8px;margin-top:17px;flex-wrap:wrap}.pill{background:#ffffff08;border:1px solid var(--line);padding:7px 10px;border-radius:9px;color:#c8d3e6;font-size:11px}
-.section-title{display:flex;align-items:center;justify-content:space-between;margin:22px 2px 12px}.section-title h2{font-size:14px;margin:0}.section-title span{font-size:11px;color:var(--muted)}
-.card{background:linear-gradient(145deg,#131a2a,#0f1420);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:12px}.file-row{display:flex;gap:12px;align-items:center}.file-icon{width:45px;height:48px;display:grid;place-items:center;border-radius:11px;background:#42f5e90d;border:1px solid #42f5e933;color:var(--cyan);font-size:21px;flex-shrink:0}.file-row h3{margin:0 0 6px;font-size:13px}.file-row p{margin:0;color:var(--muted);font-size:11px;line-height:1.8}.tag{font-size:10px;color:var(--pink);margin-top:8px;display:inline-block}
-.primary{width:100%;border:0;border-radius:12px;padding:15px;background:linear-gradient(100deg,#42f5e9,#6da7ff);color:#071018;font-weight:bold;margin-top:16px;box-shadow:0 8px 28px #42f5e91a}.secondary{width:100%;border:1px solid var(--line);background:#ffffff06;color:var(--text);border-radius:12px;padding:13px;margin-top:9px}
-.bottom{display:flex;justify-content:space-between;color:#63718a;font-size:10px;margin:23px 3px 0}.hidden{display:none!important}
-.back{border:1px solid var(--line);background:#ffffff08;color:var(--muted);border-radius:10px;padding:9px 12px;margin-bottom:15px;font-size:12px}.scene-title{font-size:21px;line-height:1.6;margin:8px 0}.scene-label{color:var(--cyan);font-size:10px;letter-spacing:1px}.story{font-size:13px;line-height:2.2;color:#c7d1e2;white-space:pre-line}.evidence{border-right:2px solid var(--pink);padding:10px 13px;background:#ff3d810a;margin:15px 0;border-radius:8px;font-size:12px;line-height:2;color:#f1d9e4}.choices{display:grid;gap:9px;margin-top:18px}.choice{background:#141c2b;color:var(--text);border:1px solid #344057;border-radius:12px;padding:13px;text-align:right;font-size:12px;line-height:1.8}.choice:active{border-color:var(--cyan);background:#42f5e911}.choice small{display:block;color:var(--muted);margin-top:4px}.meter{height:5px;background:#252e40;border-radius:8px;overflow:hidden;margin:12px 0 18px}.meter div{height:100%;background:linear-gradient(90deg,var(--pink),var(--cyan));width:20%;transition:width .3s}.ending{border:1px solid #42f5e955;background:#42f5e90b;border-radius:14px;padding:15px;line-height:2;font-size:13px}.ending h3{color:var(--cyan);margin-top:0}.clue{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid var(--line);font-size:12px;line-height:1.9}.clue:last-child{border:0}.clue b{color:var(--cyan);min-width:65px}.smallprint{color:#6f7c92;font-size:10px;line-height:1.8;margin-top:15px}
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+:root{--bg:#080b14;--panel:#111725;--line:#253146;--cyan:#50f0df;--gold:#e9bd70;--muted:#8793a8;--white:#f0f4fc}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--white);font-family:'Vazirmatn',Tahoma,sans-serif;min-height:100vh}
+button{font:inherit;cursor:pointer}
+.app{max-width:540px;margin:auto;min-height:100vh;padding:20px 17px 35px;background:radial-gradient(ellipse at 50% 0%,#17253a 0,transparent 48%)}
+.top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #263044;padding-bottom:16px}
+.brand{display:flex;gap:11px;align-items:center}
+.logo{width:43px;height:43px;border:1px solid var(--cyan);border-radius:13px;display:grid;place-items:center;color:var(--cyan);font-size:24px;box-shadow:0 0 20px #50f0df15}
+.brand strong{display:block;letter-spacing:1px;font-size:16px}
+.brand small{color:var(--muted);font-size:10px;letter-spacing:2px}
+.status{font-size:10px;color:var(--cyan);border:1px solid #50f0df45;padding:6px 9px;border-radius:30px}
+.status i{display:inline-block;width:6px;height:6px;background:var(--cyan);border-radius:50%;margin-left:5px}
+.hero{padding:28px 0 20px}
+.eyebrow{color:var(--cyan);font-size:11px;letter-spacing:1px;font-weight:700}
+h1{font-size:30px;line-height:1.6;margin:8px 0}
+h1 span{color:var(--cyan)}
+.sub{color:#a0abc0;font-size:12px;line-height:2}
+.scene{position:relative;overflow:hidden;border:1px solid #33445a;border-radius:18px;height:180px;background:linear-gradient(145deg,#1c2a3d,#0b101b 65%);display:flex;align-items:center;justify-content:center}
+.scene:before,.scene:after{content:"";position:absolute;width:230px;height:230px;border:1px solid #50f0df20;border-radius:50%}
+.scene:after{width:170px;height:170px}
+.moon{position:absolute;top:18px;left:34px;width:48px;height:48px;border-radius:50%;background:#c2e8ed;box-shadow:0 0 38px #50f0df45}
+.city{position:absolute;bottom:0;width:100%;height:65px;opacity:.65;background:linear-gradient(90deg,transparent 0 4%,#111b2b 4% 13%,transparent 13% 17%,#182439 17% 29%,transparent 29% 32%,#101a2b 32% 42%,transparent 42% 45%,#1b2940 45% 58%,transparent 58% 62%,#111b2b 62% 75%,transparent 75% 78%,#1b2940 78% 92%,transparent 92%)}
+.scene-content{position:relative;z-index:2;text-align:center}
+.fingerprint{font-size:57px;filter:drop-shadow(0 0 15px #50f0df70)}
+.scene-content div{font-size:10px;letter-spacing:3px;color:#b2c8d9}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin:23px 0 12px}
+.section-head h2{font-size:15px;margin:0}
+.counter{font-size:10px;color:var(--muted)}
+.case{background:linear-gradient(135deg,#151e2e,#0e1420);border:1px solid var(--line);border-radius:16px;padding:17px;margin-bottom:13px}
+.case-top{display:flex;justify-content:space-between;gap:12px}
+.tag{font-size:10px;color:var(--gold);background:#e9bd7014;border:1px solid #e9bd7035;border-radius:6px;padding:5px 8px;height:max-content}
+.case h3{margin:10px 0 6px;font-size:17px}
+.case p{color:#a1adc1;font-size:12px;line-height:2;margin:0}
+.case-symbol{font-size:34px}
+.primary,.secondary{border:0;border-radius:10px;padding:12px 15px;font-weight:700;font-size:12px}
+.primary{background:var(--cyan);color:#06121a;width:100%;margin-top:15px;box-shadow:0 5px 25px #50f0df12}
+.primary:active{transform:scale(.99)}
+.secondary{background:#1b2638;color:var(--white);border:1px solid #35445a}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:20px 0}
+.stat{background:#101725;border:1px solid var(--line);border-radius:12px;padding:13px 5px;text-align:center}
+.stat b{display:block;font-size:19px;color:var(--cyan)}
+.stat small{color:var(--muted);font-size:10px}
+.screen{display:none}
+.screen.active{display:block}
+.back{background:none;border:0;color:var(--cyan);padding:8px 0;font-size:12px}
+.progress{height:4px;background:#273144;border-radius:5px;margin:15px 0 22px;overflow:hidden}
+.progress div{height:100%;background:var(--cyan);width:0;transition:.3s}
+.story{font-size:13px;color:#b6c2d3;line-height:2.2}
+.clues{display:grid;gap:10px;margin:17px 0}
+.clue{width:100%;text-align:right;background:#121a28;border:1px solid #2a374c;border-radius:12px;padding:14px;color:var(--white);display:flex;align-items:center;gap:12px}
+.clue .ico{font-size:24px}
+.clue small{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+.clue.opened{border-color:#50f0df80;background:#12252c}
+.clue.opened .ico{color:var(--cyan)}
+.note{display:none;color:#d2dbea;font-size:12px;line-height:2;background:#0a101a;border-right:2px solid var(--cyan);padding:12px;margin-top:9px;border-radius:5px}
+.note.show{display:block}
+.suspects{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.suspect{background:#111927;border:1px solid #2a374c;border-radius:13px;padding:15px 9px;color:var(--white);text-align:center}
+.suspect .face{font-size:34px;display:block;margin-bottom:8px}
+.suspect small{display:block;color:var(--muted);font-size:10px;margin-top:4px}
+.suspect.selected{border-color:var(--gold);background:#302718}
+.feedback{display:none;border-radius:12px;padding:14px;margin-top:14px;font-size:12px;line-height:2}
+.feedback.show{display:block}
+.feedback.good{border:1px solid #50f0df70;background:#102622}
+.feedback.bad{border:1px solid #e9bd7060;background:#2b2117}
+.footer{text-align:center;color:#56647a;font-size:10px;margin-top:32px;line-height:2}
 </style>
 </head>
 <body>
 <div class="app">
 <header class="top">
- <div class="brand"><div class="mark">⌕</div><div><small>CASE FILES / 001</small><strong>پرونده صفر</strong></div></div>
- <div class="status">● سیستم فعال</div>
+  <div class="brand"><div class="logo">⌕</div><div><strong>پرونده صفر</strong><small>CASE ZERO · DETECTIVE UNIT</small></div></div>
+  <div class="status"><i></i> سیستم فعال</div>
 </header>
 
-<section id="home">
- <div class="hero">
-  <div class="eyebrow">پرونده محرمانه شماره ۰۰۱</div>
-  <h1>آخرین تماس<br>ساعت ۲۳:۱۷</h1>
-  <p>یک نفر ناپدید شده. سه مظنون وجود دارند. یک نفر دروغ می‌گوید. آیا می‌توانی حقیقت را پیدا کنی؟</p>
-  <div class="case-meta"><span class="pill">◈ معمای جنایی</span><span class="pill">◷ ۵ تا ۸ دقیقه</span><span class="pill">▣ فصل اول</span></div>
- </div>
- <div class="section-title"><h2>پرونده‌های در دسترس</h2><span>۱ پرونده باز</span></div>
- <div class="card">
-  <div class="file-row"><div class="file-icon">▤</div><div><h3>اتاق ۳۰۷</h3><p>کارآگاه نادر راد ساعت ۲۳:۱۷ ناپدید شده. در اتاق از داخل قفل بوده.</p><span class="tag">وضعیت: حل‌نشده</span></div></div>
-  <button class="primary" onclick="startCase()">باز کردن پرونده ←</button>
- </div>
- <div class="card">
-  <div class="file-row"><div class="file-icon">⌁</div><div><h3>میز کارآگاه</h3><p>پیشرفت، سرنخ‌های کشف‌شده و نتیجه آخرین پرونده‌ات.</p></div></div>
-  <button class="secondary" onclick="showDesk()">مشاهده میز کارآگاه</button>
- </div>
- <div class="smallprint">این یک داستان تعاملی خیالی است. امتیازها صرفاً درون‌بازی هستند و ارزش نقدی ندارند.</div>
+<section id="home" class="screen active">
+  <div class="hero">
+    <div class="eyebrow">● واحد رسیدگی به پرونده‌های ویژه</div>
+    <h1>حقیقت، پشتِ <span>سکوت</span> پنهان است.</h1>
+    <div class="sub">سرنخ‌ها را پیدا کن. تناقض‌ها را کشف کن.<br>قبل از اینکه دیر شود، حقیقت را آشکار کن.</div>
+  </div>
+  <div class="scene">
+    <div class="moon"></div><div class="city"></div>
+    <div class="scene-content"><div class="fingerprint">◎</div><div>CLASSIFIED // 001</div></div>
+  </div>
+  <div class="section-head"><h2>پرونده‌های باز</h2><span class="counter">۱ پرونده در دسترس</span></div>
+  <div class="case">
+    <div class="case-top"><div><span class="tag">پرونده شماره ۰۰۱</span><h3>آخرین قطار نیمه‌شب</h3></div><div class="case-symbol">🚉</div></div>
+    <p>ساعت ۰۰:۱۷، یک کیف محرمانه از اتاق کنترل ایستگاه ناپدید شده است. چهار نفر آن شب در ایستگاه حضور داشتند؛ یکی از آن‌ها دروغ می‌گوید.</p>
+    <button class="primary" onclick="startGame()">ورود به پرونده ←</button>
+  </div>
+  <div class="stats">
+    <div class="stat"><b id="solvedStat">۰</b><small>پرونده حل‌شده</small></div>
+    <div class="stat"><b id="scoreStat">۰</b><small>امتیاز کارآگاه</small></div>
+    <div class="stat"><b id="rankStat">تازه‌کار</b><small>رتبه فعلی</small></div>
+  </div>
 </section>
 
-<section id="game" class="hidden">
- <button class="back" onclick="goHome()">← بازگشت به پرونده‌ها</button>
- <div class="scene-label" id="sceneLabel">گزارش صحنه</div>
- <h2 class="scene-title" id="sceneTitle"></h2>
- <div class="meter"><div id="progress"></div></div>
- <p class="story" id="sceneStory"></p>
- <div id="evidence" class="evidence hidden"></div>
- <div id="choices" class="choices"></div>
- <div id="ending" class="ending hidden"></div>
- <button id="restart" class="secondary hidden" onclick="startCase()">شروع دوباره پرونده</button>
+<section id="game" class="screen">
+  <button class="back" onclick="goHome()">→ بازگشت به میز کارآگاه</button>
+  <div class="eyebrow">CASE FILE / 001</div>
+  <h1 style="font-size:25px">آخرین قطار <span>نیمه‌شب</span></h1>
+  <div class="case">
+    <div class="case-top"><div><span class="tag">محرمانه</span></div><span class="counter">زمان حادثه: ۰۰:۱۷</span></div>
+    <p class="story">کیف حاوی اسناد محرمانه از اتاق کنترل ایستگاه مرکزی ناپدید شده. در ساعت حادثه، باران شدیدی می‌بارید و درِ اتاق فقط با کارت مخصوص باز می‌شد. سه سرنخ را بررسی کن و سپس مظنون را انتخاب کن.</p>
+  </div>
+  <div class="section-head"><h2>۱. بررسی سرنخ‌ها</h2><span id="clueCount" class="counter">۰ از ۳ بررسی شده</span></div>
+  <div class="progress"><div id="bar"></div></div>
+  <div class="clues">
+    <div><button class="clue" onclick="reveal(0)"><span class="ico">🪪</span><span>کارت ورود<small>گزارش دستگاه کنترل دسترسی</small></span><span>＋</span></button><div id="note0" class="note">کارت سرپرست ایستگاه، ساعت ۰۰:۱۲ در اتاق کنترل ثبت شده؛ اما صاحب کارت ادعا می‌کند از ساعت ۲۳:۵۰ آنجا نبوده است.</div></div>
+    <div><button class="clue" onclick="reveal(1)"><span class="ico">👞</span><span>رد کفش خیس<small>اثر باقی‌مانده کنار پنجره</small></span><span>＋</span></button><div id="note1" class="note">رد کفش از کنار پنجره تا میز کنترل ادامه دارد. پنجره از داخل قفل بوده؛ رد کفش به کفش‌های خیس کارکنان سکوی بیرونی شباهت دارد.</div></div>
+    <div><button class="clue" onclick="reveal(2)"><span class="ico">📹</span><span>تصویر دوربین<small>آخرین فریم پیش از قطع تصویر</small></span><span>＋</span></button><div id="note2" class="note">تصویر ساعت ۰۰:۱۴ قطع شده. در انعکاس شیشه، فردی با جلیقه زرد دیده می‌شود؛ این جلیقه مخصوص کارکنان سکوی بیرونی است.</div></div>
+  </div>
+  <div class="section-head"><h2>۲. چه کسی دروغ می‌گوید؟</h2><span class="counter">یک انتخاب</span></div>
+  <div class="suspects">
+    <button class="suspect" onclick="choose(0)"><span class="face">👨🏻‍✈️</span>کامران<small>سرپرست ایستگاه</small></button>
+    <button class="suspect" onclick="choose(1)"><span class="face">👩🏻‍💼</span>نرگس<small>مسئول فروش بلیت</small></button>
+    <button class="suspect" onclick="choose(2)"><span class="face">🧑🏻‍🔧</span>سامان<small>تکنسین سکو</small></button>
+    <button class="suspect" onclick="choose(3)"><span class="face">👨🏽‍💼</span>بهرام<small>نگهبان شب</small></button>
+  </div>
+  <button class="primary" onclick="accuse()">ثبت اتهام نهایی</button>
+  <div id="feedback" class="feedback"></div>
+  <button id="nextButton" class="primary" style="display:none" onclick="goHome()">بازگشت به میز کارآگاه</button>
 </section>
 
-<section id="desk" class="hidden">
- <button class="back" onclick="goHome()">← بازگشت</button>
- <div class="hero"><div class="eyebrow">وضعیت کارآگاه</div><h1 style="font-size:23px">میز کارآگاه</h1><p>گزارش عملکرد تو در پرونده صفر</p></div>
- <div class="section-title"><h2>آمار تو</h2><span>ذخیره روی همین دستگاه</span></div>
- <div class="card">
-  <div class="clue"><b>امتیاز</b><span id="score">۰</span></div>
-  <div class="clue"><b>پرونده‌ها</b><span id="solved">۰</span></div>
-  <div class="clue"><b>بهترین نتیجه</b><span id="best">هنوز ثبت نشده</span></div>
- </div>
- <button class="primary" onclick="startCase()">ادامه تحقیقات</button>
- <div class="smallprint">در نسخه آزمایشی، آمار روی همین دستگاه ذخیره می‌شود. در نسخه بعدی می‌توانیم ذخیره‌سازی حساب‌محور و جدول رتبه‌بندی آنلاین اضافه کنیم.</div>
-</section>
-<div class="bottom"><span>ZERO DIVISION • INTERACTIVE FICTION</span><span>BUILD 0.1</span></div>
+<footer class="footer">CASE ZERO © · هر سرنخ، تکه‌ای از حقیقت است.<br>نسخه آزمایشی · پرونده‌های جدید در راه‌اند.</footer>
 </div>
+
 <script>
-const tg = window.Telegram?.WebApp;
-if (tg) { tg.ready(); tg.expand(); try { tg.setHeaderColor('#080a12'); tg.setBackgroundColor('#080a12'); } catch(e) {} }
-const $ = id => document.getElementById(id);
-const fa = n => String(n).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
-const story = [
- {label:'۰۱ / ورود به صحنه',title:'اتاق ۳۰۷',text:'ساعت ۰۰:۱۲ است. به هتل آذر رسیدی. کارآگاه نادر راد ساعت ۲۳:۱۷ از همکارش پیام گرفته و بعد ناپدید شده. در اتاق ۳۰۷ از داخل قفل بوده؛ پنجره هم به دیوار یک ساختمان دیگر باز می‌شود.',evidence:'گزارش اولیه: قفل در سالم است. روی میز یک فنجان چای نیمه‌خورده و یک ضبط‌صوت خاموش پیدا شده.',choices:[['بررسی ضبط‌صوت','شاید آخرین صدای اتاق هنوز باقی مانده باشد.',1],['بازجویی از نگهبان','نگهبان آخرین فردی است که راهرو را دیده.',2],['بررسی پنجره','شاید مسیر خروج از چیزی که دیده می‌شود متفاوت باشد.',3]]},
- {label:'۰۲ / مدرک صوتی',title:'صدایی که نباید آنجا باشد',text:'ضبط‌صوت روشن می‌شود. صدای نادر شنیده می‌شود: «تو گفتی ساعت یازده می‌آیی... پس چرا ساعت...» بعد صدای سه ضربه می‌آید و فایل قطع می‌شود.',evidence:'جزئیات فنی: فایل در ساعت ۲۳:۱۹ ذخیره شده؛ دو دقیقه بعد از زمان ناپدیدشدن ثبت‌شده.',choices:[['زمان فایل را با گزارش تطبیق بده','دو دقیقه اختلاف می‌تواند مهم باشد.',4],['فایل را نادیده بگیر','شاید ساعت دستگاه دقیق نبوده.',5]]},
- {label:'۰۲ / شاهد',title:'نگهبان شب',text:'نگهبان می‌گوید ساعت ۲۳:۱۰ یک زن با پالتوی روشن وارد آسانسور شده، اما مطمئن نیست به طبقه سوم رفته باشد. می‌گوید بعد از آن صدایی نشنیده است.',evidence:'دفتر ورود نشان می‌دهد هیچ مهمانی با نام ثبت‌شده در آن ساعت وارد نشده.',choices:[['از نگهبان درباره دوربین بپرس','شاید چیزی را عمداً نگفته باشد.',6],['سراغ فهرست مهمان‌ها برو','هویت زن را باید پیدا کرد.',7]]},
- {label:'۰۲ / پنجره',title:'راه خروج ناممکن',text:'روی لبه پنجره گرد و خاک یکدست است. هیچ رد دست یا کفشی دیده نمی‌شود. اما روی پرده، رشته‌ای از الیاف آبی گیر کرده است.',evidence:'آزمایش اولیه: الیاف شبیه پارچه یونیفرم کارکنان هتل است.',choices:[['الیاف را با لباس کارکنان مقایسه کن','سرنخ شاید به داخل هتل برگردد.',8],['پنجره را مسیر اصلی فرض کن','شاید فرد از راهی غیرعادی خارج شده.',5]]},
- {label:'۰۳ / زمان‌بندی',title:'دو دقیقه گمشده',text:'ساعت ضبط‌صوت دو دقیقه جلو بوده؛ اما گزارش نگهبانی دقیقاً با ساعت دیواری تنظیم شده. پس صدای ضبط‌شده احتمالاً پیش از ساعت ۲۳:۱۷ اتفاق افتاده است.',evidence:'نکته: نادر احتمالاً پس از ضبط پیام هنوز زنده بوده. زمان ناپدیدشدن ممکن است اشتباه ثبت شده باشد.',choices:[['دوباره با نگهبان روبه‌رو شو','زمان‌بندی روایتش را آزمایش کن.',6],['پیام‌های تلفن نادر را بررسی کن','باید بفهمی قرار ملاقات با چه کسی بوده.',7]]},
- {label:'۰۳ / بن‌بست',title:'سرنخ ناکافی',text:'این مسیر به نتیجه قطعی نمی‌رسد. هنوز یک تناقض مهم در گفته‌های شاهدها وجود دارد. به میز کارآگاه برگرد و مسیر دیگری را امتحان کن.',evidence:'پرونده هنوز باز است؛ یک انتخاب متفاوت ممکن است سرنخ تازه‌ای آشکار کند.',choices:[['بازگشت به ابتدای پرونده','تحقیق را با سرنخ‌های تازه شروع کن.',0]]},
- {label:'۰۳ / دوربین',title:'تصویر ناقص',text:'نگهبان مکث می‌کند و می‌گوید دوربین راهروی طبقه سوم از ساعت ۲۳:۰۰ تا ۲۳:۳۰ خراب بوده. اما گزارش تعمیرات نشان می‌دهد دوربین روز قبل سالم بوده است.',evidence:'تناقض: چرا خرابی دوربین در گزارش شیفت ثبت نشده؟',choices:[['گزارش تعمیرات را بررسی کن','نام فرد مسئول ثبت خرابی را پیدا کن.',8],['نگهبان را متهم کن','شاید خودش در ماجرا نقش دارد.',9]]},
- {label:'۰۳ / پیام‌ها',title:'قرار ملاقات',text:'آخرین پیام نادر از شماره‌ای ناشناس آمده: «اتاق ۳۰۷. تنها بیا. چیزی را که مال من است پس بده.» پیام ۲۳:۰۵ ارسال شده.',evidence:'پیام دریافتی است، نه ارسالی؛ فرستنده احتمالاً در هتل بوده یا به سیستم داخلی دسترسی داشته.',choices:[['شماره را با کارکنان تطبیق بده','یک فرد داخلی محتمل است.',8],['روی زن ناشناس تمرکز کن','او شاید فرستنده پیام باشد.',9]]},
- {label:'۰۴ / تناقض',title:'اسم روی برگه',text:'در فرم تعمیرات، نام مسئول قطع دوربین «سامان» نوشته شده؛ اما فهرست کارکنان می‌گوید سامان آن شب مرخصی بوده. الیاف آبی هم متعلق به یونیفرم سرپرست شیفت است.',evidence:'دو سرنخ مستقل به سرپرست شیفت اشاره می‌کنند، اما هنوز باید انگیزه و فرصت را ثابت کنی.',choices:[['سرپرست شیفت را بازجویی کن','شواهد را کنار هم بگذار.',10],['هنوز برای نتیجه‌گیری زود است','دنبال سرنخ تکمیلی بگرد.',7]]},
- {label:'۰۴ / مظنون',title:'اعتراف نیمه‌کاره',text:'سرپرست می‌گوید وارد اتاق نشده؛ اما وقتی از پیام ناشناس می‌پرسی، ناگهان می‌گوید: «نادر قرار نبود این‌قدر زود برگردد.» این جمله را نمی‌توانست بداند مگر اینکه در ماجرا دخیل باشد.',evidence:'سرپرست اطلاعاتی دارد که طبق گفته خودش نباید داشته باشد.',choices:[['مدارک را رو کن','ضبط‌صوت، پیام و گزارش تعمیرات را کنار هم بگذار.',10],['فعلاً او را آزاد کن','شاید هنوز فرد دیگری دخیل باشد.',5]]},
- {label:'۰۵ / جمع‌بندی',title:'حقیقت اتاق ۳۰۷',text:'تو سرنخ‌های کلیدی را جمع کرده‌ای: پیام ناشناس، گزارش دستکاری دوربین و الیاف یونیفرم. حالا باید نتیجه‌گیری کنی.',evidence:'سه سؤال: چه کسی دسترسی داشت؟ چه کسی از زمان ورود نادر خبر داشت؟ چه کسی خرابی دوربین را پنهان کرد؟',choices:[['سرپرست شیفت را متهم می‌کنم','اتهام بر اساس سه سرنخ اصلی.',11],['نگهبان را متهم می‌کنم','او در روایت زمان‌بندی تناقض داشت.',12],['زن ناشناس را متهم می‌کنم','هویت او هنوز روشن نیست.',13]]},
- {label:'پایان / حل پرونده',title:'پرونده حل شد',text:'سرپرست شیفت پیام را فرستاده و دوربین را از مدار خارج کرده بود تا نادر را برای پس‌گرفتن یک دفتر حساب محرمانه به اتاق بکشاند. او نادر را از راه خدماتی خارج کرد؛ پنجره فقط صحنه‌سازی بود. تو تناقض‌ها را کنار هم گذاشتی و پرونده را حل کردی.',evidence:'نتیجه: کارآگاه دقیق. امتیاز این پرونده ثبت شد.',ending:true},
- {label:'پایان / نتیجه اشتباه',title:'مظنون اشتباه',text:'مدارک کافی برای متهم‌کردن این فرد وجود ندارد. پرونده به بن‌بست می‌رسد و مظنون اصلی فرصت پیدا می‌کند ردش را پاک کند. یک کارآگاه خوب باید بین حدس و مدرک فرق بگذارد.',evidence:'نتیجه: پرونده حل نشد. دوباره بررسی کن.',ending:true}
-];
-let current=0, visited=new Set(), clues=new Set();
-function hideAll(){['home','game','desk'].forEach(id=>$(id).classList.add('hidden'))}
-function goHome(){hideAll();$('home').classList.remove('hidden')}
-function showDesk(){hideAll();$('desk').classList.remove('hidden');const s=JSON.parse(localStorage.getItem('casezero')||'{}');$('score').textContent=fa(s.score||0);$('solved').textContent=fa(s.solved||0);$('best').textContent=s.best?'حل شد — '+fa(s.best)+' امتیاز':'هنوز ثبت نشده'}
-function startCase(){hideAll();$('game').classList.remove('hidden');visited=new Set();clues=new Set();renderScene(0)}
-function renderScene(i){current=i;const s=story[i];visited.add(i);$('sceneLabel').textContent=s.label;$('sceneTitle').textContent=s.title;$('sceneStory').textContent=s.text;$('progress').style.width=Math.min(100,Math.max(8,visited.size/11*100))+'%';$('evidence').textContent=s.evidence||'';$('evidence').classList.toggle('hidden',!s.evidence);$('choices').innerHTML='';$('ending').classList.add('hidden');$('restart').classList.add('hidden');
-if(s.ending){$('choices').classList.add('hidden');$('ending').classList.remove('hidden');$('ending').innerHTML='<h3>'+s.title+'</h3><p>'+s.text+'</p><p>'+s.evidence+'</p>';if(i===11){let d=JSON.parse(localStorage.getItem('casezero')||'{}');d.score=(d.score||0)+100;d.solved=(d.solved||0)+1;d.best=100;localStorage.setItem('casezero',JSON.stringify(d));$('ending').innerHTML+='<p style="color:var(--cyan)">+۱۰۰ امتیاز کارآگاهی</p>'} $('restart').classList.remove('hidden');return}
-$('choices').classList.remove('hidden');s.choices.forEach(c=>{const b=document.createElement('button');b.className='choice';b.innerHTML=c[0]+'<small>'+c[1]+'</small>';b.onclick=()=>{clues.add(i);renderScene(c[2])};$('choices').appendChild(b)})}
-goHome();
+let opened = [false,false,false];
+let selected = -1;
+let finished = false;
+let score = Number(localStorage.getItem('cz_score') || 0);
+let solved = Number(localStorage.getItem('cz_solved') || 0);
+
+function refreshStats(){
+  document.getElementById('scoreStat').textContent = score;
+  document.getElementById('solvedStat').textContent = solved;
+  document.getElementById('rankStat').textContent =
+    score >= 150 ? 'نابغه' : score >= 70 ? 'کارآگاه' : 'تازه‌کار';
+}
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+function startGame(){
+  opened=[false,false,false];selected=-1;finished=false;
+  document.querySelectorAll('.clue').forEach(b=>b.classList.remove('opened'));
+  document.querySelectorAll('.note').forEach(n=>n.classList.remove('show'));
+  document.querySelectorAll('.suspect').forEach(b=>b.classList.remove('selected'));
+  document.getElementById('clueCount').textContent='۰ از ۳ بررسی شده';
+  document.getElementById('bar').style.width='0%';
+  document.getElementById('feedback').className='feedback';
+  document.getElementById('nextButton').style.display='none';
+  document.querySelector('.primary[onclick="accuse()"]').style.display='block';
+  showScreen('game');
+}
+function reveal(i){
+  if(finished)return;
+  opened[i]=true;
+  document.getElementById('note'+i).classList.add('show');
+  document.querySelectorAll('.clue')[i].classList.add('opened');
+  const count=opened.filter(Boolean).length;
+  document.getElementById('clueCount').textContent=
+    ['۰','۱','۲','۳'][count]+' از ۳ بررسی شده';
+  document.getElementById('bar').style.width=(count/3*100)+'%';
+}
+function choose(i){
+  if(finished)return;
+  selected=i;
+  document.querySelectorAll('.suspect').forEach((b,n)=>b.classList.toggle('selected',n===i));
+}
+function accuse(){
+  if(finished)return;
+  const feedback=document.getElementById('feedback');
+  feedback.className='feedback show';
+  if(selected===-1){
+    feedback.textContent='اول یکی از مظنون‌ها را انتخاب کن.';
+    feedback.classList.add('bad');return;
+  }
+  if(opened.filter(Boolean).length<3){
+    feedback.textContent='هنوز همه سرنخ‌ها را بررسی نکرده‌ای. کارآگاه دقیق هیچ جزئیاتی را نادیده نمی‌گیرد.';
+    feedback.classList.add('bad');return;
+  }
+  finished=true;
+  if(selected===2){
+    const earned=100;
+    score+=earned;solved++;
+    localStorage.setItem('cz_score',score);
+    localStorage.setItem('cz_solved',solved);
+    feedback.innerHTML='✓ <b>پرونده حل شد!</b><br>سامان، تکنسین سکو، دروغ می‌گفت. جلیقه زرد او با انعکاس دوربین مطابقت دارد و حضورش در مسیر رد کفش‌ها توضیح می‌دهد که چگونه به اتاق کنترل رسیده است. کارت ثبت‌شده نیز نشان می‌دهد زمان‌بندی روایت مظنون‌ها با گزارش دستگاه همخوانی ندارد.<br><br>پاداش: +۱۰۰ امتیاز کارآگاهی';
+    feedback.classList.add('good');
+  }else{
+    feedback.innerHTML='اتهام ثبت شد، اما شواهد کافی برای محکوم کردن این مظنون وجود ندارد. پاسخ پرونده: <b>سامان، تکنسین سکو</b>. سرنخ دوربین و رد کفش خیس را دوباره بررسی کن.';
+    feedback.classList.add('bad');
+  }
+  document.querySelector('.primary[onclick="accuse()"]').style.display='none';
+  document.getElementById('nextButton').style.display='block';
+  refreshStats();
+}
+function goHome(){refreshStats();showScreen('home')}
+refreshStats();
 </script>
-</body></html>
+</body>
+</html>
