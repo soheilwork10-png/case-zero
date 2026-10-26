@@ -3,214 +3,282 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080b14">
-<title>پرونده صفر | بازی کارآگاهی</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="theme-color" content="#050a12">
+<title>پرونده صفر | مرکز تحقیقات</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
-:root{--bg:#080b14;--panel:#111725;--line:#253146;--cyan:#50f0df;--gold:#e9bd70;--muted:#8793a8;--white:#f0f4fc}
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+:root{--bg:#050a12;--panel:#0a1421;--panel2:#0d1b2b;--line:#183c59;--cyan:#13d8f1;--blue:#087bd1;--gold:#e6bb78;--red:#ff344b;--txt:#e8f4ff;--muted:#7893ac}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--white);font-family:'Vazirmatn',Tahoma,sans-serif;min-height:100vh}
+body{margin:0;background:var(--bg);color:var(--txt);font:13px Vazirmatn,Tahoma,sans-serif}
 button{font:inherit;cursor:pointer}
-.app{max-width:540px;margin:auto;min-height:100vh;padding:20px 17px 35px;background:radial-gradient(ellipse at 50% 0%,#17253a 0,transparent 48%)}
-.top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #263044;padding-bottom:16px}
-.brand{display:flex;gap:11px;align-items:center}
-.logo{width:43px;height:43px;border:1px solid var(--cyan);border-radius:13px;display:grid;place-items:center;color:var(--cyan);font-size:24px;box-shadow:0 0 20px #50f0df15}
-.brand strong{display:block;letter-spacing:1px;font-size:16px}
-.brand small{color:var(--muted);font-size:10px;letter-spacing:2px}
-.status{font-size:10px;color:var(--cyan);border:1px solid #50f0df45;padding:6px 9px;border-radius:30px}
-.status i{display:inline-block;width:6px;height:6px;background:var(--cyan);border-radius:50%;margin-left:5px}
-.hero{padding:28px 0 20px}
-.eyebrow{color:var(--cyan);font-size:11px;letter-spacing:1px;font-weight:700}
-h1{font-size:30px;line-height:1.6;margin:8px 0}
-h1 span{color:var(--cyan)}
-.sub{color:#a0abc0;font-size:12px;line-height:2}
-.scene{position:relative;overflow:hidden;border:1px solid #33445a;border-radius:18px;height:180px;background:linear-gradient(145deg,#1c2a3d,#0b101b 65%);display:flex;align-items:center;justify-content:center}
-.scene:before,.scene:after{content:"";position:absolute;width:230px;height:230px;border:1px solid #50f0df20;border-radius:50%}
-.scene:after{width:170px;height:170px}
-.moon{position:absolute;top:18px;left:34px;width:48px;height:48px;border-radius:50%;background:#c2e8ed;box-shadow:0 0 38px #50f0df45}
-.city{position:absolute;bottom:0;width:100%;height:65px;opacity:.65;background:linear-gradient(90deg,transparent 0 4%,#111b2b 4% 13%,transparent 13% 17%,#182439 17% 29%,transparent 29% 32%,#101a2b 32% 42%,transparent 42% 45%,#1b2940 45% 58%,transparent 58% 62%,#111b2b 62% 75%,transparent 75% 78%,#1b2940 78% 92%,transparent 92%)}
-.scene-content{position:relative;z-index:2;text-align:center}
-.fingerprint{font-size:57px;filter:drop-shadow(0 0 15px #50f0df70)}
-.scene-content div{font-size:10px;letter-spacing:3px;color:#b2c8d9}
-.section-head{display:flex;align-items:center;justify-content:space-between;margin:23px 0 12px}
-.section-head h2{font-size:15px;margin:0}
-.counter{font-size:10px;color:var(--muted)}
-.case{background:linear-gradient(135deg,#151e2e,#0e1420);border:1px solid var(--line);border-radius:16px;padding:17px;margin-bottom:13px}
-.case-top{display:flex;justify-content:space-between;gap:12px}
-.tag{font-size:10px;color:var(--gold);background:#e9bd7014;border:1px solid #e9bd7035;border-radius:6px;padding:5px 8px;height:max-content}
-.case h3{margin:10px 0 6px;font-size:17px}
-.case p{color:#a1adc1;font-size:12px;line-height:2;margin:0}
-.case-symbol{font-size:34px}
-.primary,.secondary{border:0;border-radius:10px;padding:12px 15px;font-weight:700;font-size:12px}
-.primary{background:var(--cyan);color:#06121a;width:100%;margin-top:15px;box-shadow:0 5px 25px #50f0df12}
-.primary:active{transform:scale(.99)}
-.secondary{background:#1b2638;color:var(--white);border:1px solid #35445a}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:20px 0}
-.stat{background:#101725;border:1px solid var(--line);border-radius:12px;padding:13px 5px;text-align:center}
-.stat b{display:block;font-size:19px;color:var(--cyan)}
-.stat small{color:var(--muted);font-size:10px}
+button:focus-visible{outline:2px solid var(--cyan)}
+button:disabled{opacity:.45;cursor:not-allowed}
+.app{max-width:1500px;margin:auto;padding:12px;background:radial-gradient(ellipse at 50% 0,#0c2943 0,transparent 45%)}
+.topbar{height:54px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:0 12px;margin-bottom:12px}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{height:38px;width:38px;border:1px solid var(--cyan);border-radius:10px;display:grid;place-items:center;color:var(--cyan);font-size:25px;text-shadow:0 0 15px var(--cyan)}
+.brand b{display:block;font-size:16px;letter-spacing:1px}
+.brand small{font-size:9px;color:var(--muted);letter-spacing:2px}
+.toplinks{display:flex;gap:7px}
+.toplinks button,.sound{border:1px solid transparent;background:transparent;color:#a7c5df;padding:9px 12px;border-radius:8px}
+.toplinks button:hover,.sound:hover{border-color:var(--line);color:var(--cyan)}
+.layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:12px}
+.adside{background:linear-gradient(180deg,#101b2b,#070c14);border:1px solid #23394e;border-radius:12px;padding:18px 15px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.roberah{font-size:22px;font-weight:800;color:var(--gold)}
+.roberah small{display:block;color:#c7d4e3;font-size:11px;font-weight:500}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.adside h3{font-size:16px;margin:0;line-height:2}
+.adside h3 span{color:var(--gold)}
+.phone{background:linear-gradient(100deg,#e4bc7b,#b98b48);color:#08111c;padding:12px 6px;border-radius:40px;text-align:center;font-size:20px;font-weight:800;direction:ltr}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;text-align:center}
+.service{font-size:10px;color:#c9d9e8}
+.service i{font-style:normal;width:43px;height:43px;margin:0 auto 7px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:23px}
+.brandbosch{text-align:center;font-size:25px;font-weight:900;color:#ed2438;letter-spacing:1px}
+.brandbosch span{color:#d9e8f7;font-size:22px}
+.appliance{flex:1;min-height:130px;border-radius:8px;background:linear-gradient(180deg,#0b1724,#152637 55%,#070d15);display:flex;justify-content:center;align-items:center;gap:8px;padding:15px 5px}
+.appliance div{height:105px;flex:1;max-width:75px;border:1px solid #8093a4;border-radius:5px;background:linear-gradient(90deg,#344656,#a5b6c2 18%,#293847 28%,#778b99 70%,#1a2734);box-shadow:inset 0 0 20px #0008;position:relative}
+.appliance div:after{content:"";position:absolute;top:25%;left:10%;width:80%;aspect-ratio:1;border-radius:50%;border:5px solid #172532;box-shadow:inset 0 0 12px #000;background:radial-gradient(circle,#65798b,#111b27)}
+.appliance div:last-child:after{top:12%;height:5px;aspect-ratio:auto;border-radius:0}
+.adside .slogan{text-align:center;font-size:11px;color:#c5d1df;line-height:2}
+.workspace{min-width:0}
+.hero{height:220px;border:1px solid #1c4c6a;border-radius:12px;overflow:hidden;position:relative;display:flex;align-items:center;padding:25px;background:linear-gradient(100deg,#07111e 0%,#0b2339 48%,#050b13 100%);margin-bottom:12px}
+.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(110deg,transparent 0 34px,#58b7ff08 35px 36px),radial-gradient(ellipse at 75% 55%,#13507a70,transparent 50%)}
+.hero:after{content:"";position:absolute;left:8%;right:8%;bottom:0;height:48px;background:repeating-linear-gradient(90deg,#081522 0 18px,#14283a 19px 28px,transparent 29px 40px);opacity:.8}
+.heroContent{position:relative;z-index:1;max-width:460px}
+.eyebrow{font-size:10px;letter-spacing:2px;color:var(--cyan)}
+h1{font-size:clamp(24px,3.5vw,43px);margin:10px 0;line-height:1.6}
+h1 em{font-style:normal;color:var(--red)}
+.hero p{font-size:12px;line-height:2;color:#a8c3d9}
+.primary,.goldbtn{border:0;border-radius:7px;padding:11px 16px;background:linear-gradient(100deg,#0874ce,#00a8da);color:white;font-weight:700}
+.goldbtn{background:linear-gradient(100deg,#c89a58,#f0cf8f);color:#10151c}
+.mainGrid{display:grid;grid-template-columns:1.02fr 1fr 1fr;gap:12px;align-items:stretch}
+.panel{min-width:0;background:linear-gradient(155deg,#0d1a29,#080f19);border:1px solid var(--line);border-radius:11px;padding:13px;box-shadow:0 8px 28px #0002}
+.panelTitle{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #19334a;padding-bottom:11px;margin-bottom:11px;font-size:13px;font-weight:700}
+.panelTitle span{color:var(--cyan);font-size:10px}
+.clue{width:100%;display:flex;align-items:center;text-align:right;gap:10px;padding:8px;margin:8px 0;background:#0b1a29;border:1px solid #17415e;border-radius:9px;color:var(--txt)}
+.clue:hover,.clue.active{border-color:var(--cyan);background:#0c2536}
+.thumb{height:65px;width:65px;flex-shrink:0;border-radius:6px;border:1px solid #365a76;display:grid;place-items:center;font-size:28px;background:radial-gradient(circle,#1d4058,#09121e)}
+.clue b{display:block;font-size:12px}
+.clue small{display:block;font-size:10px;color:var(--muted);line-height:1.8;margin-top:5px}
+.plus{margin-right:auto;color:var(--cyan);font-size:20px}
+.detail{display:none;background:#07111c;border-right:2px solid var(--cyan);padding:10px;font-size:11px;line-height:2;color:#c3d4e5}
+.detail.show{display:block}
+.progress{height:5px;background:#1b2c3d;border-radius:8px;margin:14px 0;overflow:hidden}
+.progress div{height:100%;width:0;background:var(--cyan);transition:.3s;box-shadow:0 0 10px var(--cyan)}
+.muted{font-size:10px;color:var(--muted)}
+.suspects{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.person{background:#0a1725;border:1px solid #17415e;border-radius:9px;overflow:hidden;padding:0;color:var(--txt);text-align:center}
+.portrait{height:110px;display:grid;place-items:center;font-size:54px;background:radial-gradient(ellipse at 50% 35%,#35546c,#142437 55%,#07111b);border-bottom:1px solid #21445d}
+.person b{display:block;padding-top:8px;font-size:12px}
+.person small{display:block;padding:3px 4px 9px;color:var(--cyan);font-size:10px}
+.person.selected{border-color:var(--cyan);box-shadow:0 0 14px #13d8f126}
+.person.selected .portrait{background:radial-gradient(ellipse at 50% 35%,#416f83,#173449 55%,#07111b)}
+.full{width:100%;margin-top:12px}
+.evidenceBoard{min-height:205px;padding:13px;border-radius:9px;border:1px solid #5b472e;background:radial-gradient(ellipse at 40% 20%,#4a3826,#201b19 65%,#111319);position:relative;overflow:hidden}
+.evidenceBoard:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 24px,#d5ad7b08 25px 26px)}
+.paper{position:relative;margin:7px 0;padding:10px;background:#c8b18a;color:#1c2027;font-size:11px;transform:rotate(-1deg);box-shadow:0 4px 12px #0008}
+.paper:nth-child(2){transform:rotate(1.5deg);background:#d8d8cf}
+.paper b{display:block;font-size:12px}
+.redline{height:2px;background:#b92f36;width:55%;margin:7px auto;transform:rotate(-13deg)}
+.chatbox{background:#080f19;border:1px solid #183850;border-radius:9px;padding:10px;margin-top:12px}
+.bubble{padding:10px;border-radius:9px;background:#102c46;font-size:11px;line-height:2;margin:7px 0 7px auto;max-width:94%}
+.bubble.sus{background:#1b2736;margin-right:auto;margin-left:0}
+.choices{display:grid;gap:7px;margin-top:10px}
+.choice{background:#0b1a29;border:1px solid #24435d;border-radius:7px;color:#d8e9f9;text-align:right;padding:10px;font-size:11px}
+.choice:hover{border-color:var(--cyan)}
+.bottom{display:grid;grid-template-columns:1fr auto;align-items:center;gap:15px;margin-top:12px;padding:14px 17px;border:1px solid #27465e;border-radius:10px;background:linear-gradient(100deg,#0c1927,#111a24)}
+.bottom strong{font-size:13px;color:var(--gold)}
+.bottom p{margin:5px 0 0;font-size:10px;color:var(--muted)}
+.admini{display:flex;align-items:center;gap:12px;font-size:10px;color:#b8c9db}
+.admini b{color:var(--gold);font-size:12px;white-space:nowrap}
+.admini a{color:var(--gold);font-weight:800;text-decoration:none;direction:ltr;white-space:nowrap}
 .screen{display:none}
 .screen.active{display:block}
-.back{background:none;border:0;color:var(--cyan);padding:8px 0;font-size:12px}
-.progress{height:4px;background:#273144;border-radius:5px;margin:15px 0 22px;overflow:hidden}
-.progress div{height:100%;background:var(--cyan);width:0;transition:.3s}
-.story{font-size:13px;color:#b6c2d3;line-height:2.2}
-.clues{display:grid;gap:10px;margin:17px 0}
-.clue{width:100%;text-align:right;background:#121a28;border:1px solid #2a374c;border-radius:12px;padding:14px;color:var(--white);display:flex;align-items:center;gap:12px}
-.clue .ico{font-size:24px}
-.clue small{display:block;color:var(--muted);font-size:10px;margin-top:3px}
-.clue.opened{border-color:#50f0df80;background:#12252c}
-.clue.opened .ico{color:var(--cyan)}
-.note{display:none;color:#d2dbea;font-size:12px;line-height:2;background:#0a101a;border-right:2px solid var(--cyan);padding:12px;margin-top:9px;border-radius:5px}
-.note.show{display:block}
-.suspects{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.suspect{background:#111927;border:1px solid #2a374c;border-radius:13px;padding:15px 9px;color:var(--white);text-align:center}
-.suspect .face{font-size:34px;display:block;margin-bottom:8px}
-.suspect small{display:block;color:var(--muted);font-size:10px;margin-top:4px}
-.suspect.selected{border-color:var(--gold);background:#302718}
-.feedback{display:none;border-radius:12px;padding:14px;margin-top:14px;font-size:12px;line-height:2}
-.feedback.show{display:block}
-.feedback.good{border:1px solid #50f0df70;background:#102622}
-.feedback.bad{border:1px solid #e9bd7060;background:#2b2117}
-.footer{text-align:center;color:#56647a;font-size:10px;margin-top:32px;line-height:2}
+.toast{display:none;padding:12px;border-radius:8px;margin-top:10px;line-height:2;font-size:11px}
+.toast.show{display:block}
+.toast.good{background:#0b2b27;border:1px solid #1c8678}
+.toast.bad{background:#30231b;border:1px solid #a56e3a}
+.adbar{margin:14px 0 2px;padding:8px 10px;border:1px solid #6d57364a;background:#18150f;border-radius:7px;display:flex;justify-content:center;gap:9px;align-items:center;flex-wrap:wrap;font-size:10px;color:#c2cedb}
+.adbar b{color:var(--gold)}
+.adbar a{color:var(--gold);text-decoration:none;font-weight:800;direction:ltr}
+footer{text-align:center;font-size:9px;color:#536d84;padding:12px}
+@media(max-width:900px){
+ .layout{grid-template-columns:190px minmax(0,1fr)}
+ .mainGrid{grid-template-columns:1fr 1fr}
+ .mainGrid .panel:last-child{grid-column:1/-1}
+ .portrait{height:90px}
+ .hero{height:190px}
+}
+@media(max-width:600px){
+ .app{padding:8px}
+ .topbar{padding:0 4px}
+ .toplinks button{padding:8px 5px;font-size:10px}
+ .brand b{font-size:14px}
+ .layout{display:flex;flex-direction:column}
+ .adside{order:2;padding:12px;gap:10px}
+ .adside .appliance{display:none}
+ .adside .rule,.adside .slogan{display:none}
+ .services{max-width:280px;margin:auto;width:100%}
+ .workspace{order:1}
+ .hero{height:165px;padding:16px}
+ .hero p{max-width:300px}
+ .mainGrid{grid-template-columns:1fr}
+ .mainGrid .panel:last-child{grid-column:auto}
+ .portrait{height:120px}
+ .bottom{grid-template-columns:1fr}
+ .admini{justify-content:space-between}
+ .toplinks button:nth-child(3){display:none}
+}
 </style>
 </head>
 <body>
 <div class="app">
-<header class="top">
-  <div class="brand"><div class="logo">⌕</div><div><strong>پرونده صفر</strong><small>CASE ZERO · DETECTIVE UNIT</small></div></div>
-  <div class="status"><i></i> سیستم فعال</div>
+<header class="topbar">
+ <div class="brand"><div class="logo">⌕</div><div><b>پرونده صفر</b><small>CASE ZERO · INVESTIGATION UNIT</small></div></div>
+ <nav class="toplinks">
+  <button onclick="show('home')">⌂ میز کار</button>
+  <button onclick="show('files')">▤ پرونده‌ها</button>
+  <button onclick="show('scores')">♜ امتیازات</button>
+  <button class="sound" id="sound" onclick="toggleSound()">♫ صدا خاموش</button>
+ </nav>
 </header>
 
+<div class="layout">
+<aside class="adside">
+ <div class="roberah">R <small>ROBERAHSERVICE<br>روبراه سرویس</small></div>
+ <div class="rule"></div>
+ <h3>خدمات <span>تخصصی</span><br><span>نصب · گارانتی · تعمیر</span></h3>
+ <a class="phone" href="tel:02168287" style="text-decoration:none">☎ 021 68287</a>
+ <div class="services">
+  <div class="service"><i>⚒</i>نصب</div>
+  <div class="service"><i>♢</i>گارانتی</div>
+  <div class="service"><i>⚙</i>تعمیر</div>
+ </div>
+ <div class="rule"></div>
+ <div class="muted" style="text-align:center">نمایندگی رسمی</div>
+ <div class="brandbosch"><span>⊙</span> BOSCH</div>
+ <div class="appliance"><div></div><div></div><div></div></div>
+ <div class="slogan">کیفیت، اعتماد، آرامش<br>روبراه سرویس</div>
+</aside>
+
+<main class="workspace">
 <section id="home" class="screen active">
-  <div class="hero">
-    <div class="eyebrow">● واحد رسیدگی به پرونده‌های ویژه</div>
-    <h1>حقیقت، پشتِ <span>سکوت</span> پنهان است.</h1>
-    <div class="sub">سرنخ‌ها را پیدا کن. تناقض‌ها را کشف کن.<br>قبل از اینکه دیر شود، حقیقت را آشکار کن.</div>
-  </div>
-  <div class="scene">
-    <div class="moon"></div><div class="city"></div>
-    <div class="scene-content"><div class="fingerprint">◎</div><div>CLASSIFIED // 001</div></div>
-  </div>
-  <div class="section-head"><h2>پرونده‌های باز</h2><span class="counter">۱ پرونده در دسترس</span></div>
-  <div class="case">
-    <div class="case-top"><div><span class="tag">پرونده شماره ۰۰۱</span><h3>آخرین قطار نیمه‌شب</h3></div><div class="case-symbol">🚉</div></div>
-    <p>ساعت ۰۰:۱۷، یک کیف محرمانه از اتاق کنترل ایستگاه ناپدید شده است. چهار نفر آن شب در ایستگاه حضور داشتند؛ یکی از آن‌ها دروغ می‌گوید.</p>
-    <button class="primary" onclick="startGame()">ورود به پرونده ←</button>
-  </div>
-  <div class="stats">
-    <div class="stat"><b id="solvedStat">۰</b><small>پرونده حل‌شده</small></div>
-    <div class="stat"><b id="scoreStat">۰</b><small>امتیاز کارآگاه</small></div>
-    <div class="stat"><b id="rankStat">تازه‌کار</b><small>رتبه فعلی</small></div>
-  </div>
+ <div class="hero"><div class="heroContent">
+  <div class="eyebrow">● پرونده‌های محرمانه · واحد ۰۰۱</div>
+  <h1>پرونده <em>صفر</em></h1>
+  <p>یک حقیقت، هزار دروغ.<br>به چیزی که می‌بینی اعتماد نکن؛ شواهد را دنبال کن.</p>
+  <button class="primary" onclick="start()">شروع تحقیقات ←</button>
+ </div></div>
+ <div class="mainGrid">
+  <section class="panel">
+   <div class="panelTitle">▤ پرونده‌های فعال <span>۱/۶</span></div>
+   <div class="clue" style="cursor:default"><div class="thumb">🚉</div><div><b>آخرین قطار نیمه‌شب</b><small>پرونده ۰۰۱ · سرقت اسناد</small><small style="color:var(--red)">● محرمانه</small></div></div>
+   <p class="muted">ساعت ۰۰:۱۷، کیف اسناد از اتاق کنترل ایستگاه ناپدید شد. چهار مظنون، سه مدرک و یک حقیقت پنهان.</p>
+   <button class="primary full" onclick="start()">ورود به پرونده +</button>
+   <div class="clue" style="opacity:.5;cursor:default"><div class="thumb">🔒</div><div><b>زنجیره تاریک</b><small>پس از حل پرونده اول</small></div></div>
+  </section>
+  <section class="panel">
+   <div class="panelTitle">♙ مظنون‌ها <span>۰/۴</span></div>
+   <div class="suspects">
+    <button class="person" onclick="pick(0)"><div class="portrait">👨🏻‍✈️</div><b>کامران</b><small>سرپرست ایستگاه</small></button>
+    <button class="person" onclick="pick(1)"><div class="portrait">👩🏻‍💼</div><b>نرگس</b><small>مسئول فروش بلیت</small></button>
+    <button class="person" onclick="pick(2)"><div class="portrait">🧑🏻‍🔧</div><b>سامان</b><small>تکنسین سکو</small></button>
+    <button class="person" onclick="pick(3)"><div class="portrait">👨🏽‍💼</div><b>بهرام</b><small>نگهبان شب</small></button>
+   </div>
+   <button class="secondary full" onclick="start()">▣ بازجویی و بررسی پرونده</button>
+  </section>
+  <section class="panel">
+   <div class="panelTitle">▧ دیوار شواهد <span>۳ مدرک</span></div>
+   <div class="evidenceBoard">
+    <div class="paper"><b>گزارش ورود</b>کارت سرپرست · ساعت ۰۰:۱۲</div>
+    <div class="redline"></div>
+    <div class="paper"><b>اثر کفش خیس</b>رد از پنجره تا میز کنترل</div>
+    <div class="redline"></div>
+    <div class="paper"><b>تصویر دوربین</b>جلیقه زرد · ساعت ۰۰:۱۴</div>
+   </div>
+   <p class="muted">هر مدرک، یک تناقض را آشکار می‌کند.</p>
+   <button class="secondary full" onclick="start()">مشاهده مدارک ←</button>
+  </section>
+ </div>
+ <div class="bottom"><div><strong>وقتی حقیقت پنهان می‌شود، ما دنبالش می‌گردیم.</strong><p>واحد تحقیقات ویژه · پرونده صفر</p></div><div class="admini"><b>روبراه سرویس</b><a href="tel:02168287">021 68287</a></div></div>
+</section>
+
+<section id="files" class="screen">
+ <div class="panel"><div class="panelTitle">▤ پرونده‌ها <span>آرشیو</span></div><h2>آخرین قطار نیمه‌شب</h2><p>پرونده شماره ۰۰۱ در دسترس است. سایر پرونده‌ها پس از تکمیل مراحل بعدی اضافه می‌شوند.</p><button class="primary" onclick="start()">ادامه پرونده ←</button></div>
+</section>
+<section id="scores" class="screen">
+ <div class="panel"><div class="panelTitle">♜ امتیازات کارآگاه</div><h1 id="scoreDisplay">۰</h1><p>امتیاز ثبت‌شده روی همین دستگاه</p><div class="rule"></div><p id="rankDisplay">رتبه: تازه‌کار</p><button class="secondary" onclick="show('home')">بازگشت</button></div>
 </section>
 
 <section id="game" class="screen">
-  <button class="back" onclick="goHome()">→ بازگشت به میز کارآگاه</button>
-  <div class="eyebrow">CASE FILE / 001</div>
-  <h1 style="font-size:25px">آخرین قطار <span>نیمه‌شب</span></h1>
-  <div class="case">
-    <div class="case-top"><div><span class="tag">محرمانه</span></div><span class="counter">زمان حادثه: ۰۰:۱۷</span></div>
-    <p class="story">کیف حاوی اسناد محرمانه از اتاق کنترل ایستگاه مرکزی ناپدید شده. در ساعت حادثه، باران شدیدی می‌بارید و درِ اتاق فقط با کارت مخصوص باز می‌شد. سه سرنخ را بررسی کن و سپس مظنون را انتخاب کن.</p>
-  </div>
-  <div class="section-head"><h2>۱. بررسی سرنخ‌ها</h2><span id="clueCount" class="counter">۰ از ۳ بررسی شده</span></div>
-  <div class="progress"><div id="bar"></div></div>
-  <div class="clues">
-    <div><button class="clue" onclick="reveal(0)"><span class="ico">🪪</span><span>کارت ورود<small>گزارش دستگاه کنترل دسترسی</small></span><span>＋</span></button><div id="note0" class="note">کارت سرپرست ایستگاه، ساعت ۰۰:۱۲ در اتاق کنترل ثبت شده؛ اما صاحب کارت ادعا می‌کند از ساعت ۲۳:۵۰ آنجا نبوده است.</div></div>
-    <div><button class="clue" onclick="reveal(1)"><span class="ico">👞</span><span>رد کفش خیس<small>اثر باقی‌مانده کنار پنجره</small></span><span>＋</span></button><div id="note1" class="note">رد کفش از کنار پنجره تا میز کنترل ادامه دارد. پنجره از داخل قفل بوده؛ رد کفش به کفش‌های خیس کارکنان سکوی بیرونی شباهت دارد.</div></div>
-    <div><button class="clue" onclick="reveal(2)"><span class="ico">📹</span><span>تصویر دوربین<small>آخرین فریم پیش از قطع تصویر</small></span><span>＋</span></button><div id="note2" class="note">تصویر ساعت ۰۰:۱۴ قطع شده. در انعکاس شیشه، فردی با جلیقه زرد دیده می‌شود؛ این جلیقه مخصوص کارکنان سکوی بیرونی است.</div></div>
-  </div>
-  <div class="section-head"><h2>۲. چه کسی دروغ می‌گوید؟</h2><span class="counter">یک انتخاب</span></div>
-  <div class="suspects">
-    <button class="suspect" onclick="choose(0)"><span class="face">👨🏻‍✈️</span>کامران<small>سرپرست ایستگاه</small></button>
-    <button class="suspect" onclick="choose(1)"><span class="face">👩🏻‍💼</span>نرگس<small>مسئول فروش بلیت</small></button>
-    <button class="suspect" onclick="choose(2)"><span class="face">🧑🏻‍🔧</span>سامان<small>تکنسین سکو</small></button>
-    <button class="suspect" onclick="choose(3)"><span class="face">👨🏽‍💼</span>بهرام<small>نگهبان شب</small></button>
-  </div>
-  <button class="primary" onclick="accuse()">ثبت اتهام نهایی</button>
-  <div id="feedback" class="feedback"></div>
-  <button id="nextButton" class="primary" style="display:none" onclick="goHome()">بازگشت به میز کارآگاه</button>
+ <div class="hero" style="height:150px"><div class="heroContent"><div class="eyebrow">CASE 001 · محرمانه</div><h1 style="font-size:25px">آخرین قطار <em>نیمه‌شب</em></h1><p>هر سه مدرک را بررسی کن و سپس اتهام نهایی را ثبت کن.</p></div></div>
+ <div class="mainGrid">
+  <section class="panel">
+   <div class="panelTitle">▧ بررسی سرنخ‌ها <span id="clueCount">۰/۳</span></div>
+   <button class="clue" onclick="reveal(0)"><div class="thumb">🪪</div><div><b>کارت ورود</b><small>گزارش دستگاه دسترسی</small></div><span class="plus">＋</span></button>
+   <div class="detail" id="d0">کارت کامران ساعت ۰۰:۱۲ در اتاق کنترل ثبت شده؛ او می‌گوید آن ساعت آنجا نبوده است.</div>
+   <button class="clue" onclick="reveal(1)"><div class="thumb">👞</div><div><b>رد کفش خیس</b><small>کنار پنجره قفل‌شده</small></div><span class="plus">＋</span></button>
+   <div class="detail" id="d1">رد کفش از پنجره تا میز کنترل می‌رود. اندازه ردها با کفش کارکنان سکو مطابقت دارد.</div>
+   <button class="clue" onclick="reveal(2)"><div class="thumb">📹</div><div><b>تصویر دوربین</b><small>آخرین فریم</small></div><span class="plus">＋</span></button>
+   <div class="detail" id="d2">در انعکاس شیشه، فردی با جلیقه زرد دیده می‌شود؛ لباس کارکنان سکوی بیرونی.</div>
+   <div class="progress"><div id="bar"></div></div><button id="next" class="primary full" disabled onclick="stage('interrogation')">ورود به بازجویی ←</button>
+  </section>
+  <section class="panel">
+   <div class="panelTitle">♙ انتخاب مظنون <span>۱ نفر</span></div>
+   <div class="suspects">
+    <button class="person" onclick="pick(0)"><div class="portrait">👨🏻‍✈️</div><b>کامران</b><small>سرپرست</small></button>
+    <button class="person" onclick="pick(1)"><div class="portrait">👩🏻‍💼</div><b>نرگس</b><small>فروش بلیت</small></button>
+    <button class="person" onclick="pick(2)"><div class="portrait">🧑🏻‍🔧</div><b>سامان</b><small>تکنسین سکو</small></button>
+    <button class="person" onclick="pick(3)"><div class="portrait">👨🏽‍💼</div><b>بهرام</b><small>نگهبان شب</small></button>
+   </div>
+   <div class="chatbox"><div class="muted">یادداشت کارآگاه</div><p id="picked">برای بازجویی، یک مظنون انتخاب کن.</p></div>
+   <button class="secondary full" onclick="stage('interrogation')">گفت‌وگو و بازجویی ←</button>
+  </section>
+  <section class="panel">
+   <div class="panelTitle">▤ دیوار شواهد <span>پرونده ۰۰۱</span></div>
+   <div class="evidenceBoard"><div class="paper"><b>کارت ورود</b>۰۰:۱۲ · اتاق کنترل</div><div class="redline"></div><div class="paper"><b>رد کفش</b>مسیر سکوی بیرونی</div><div class="redline"></div><div class="paper"><b>دوربین</b>جلیقه زرد</div></div>
+   <p class="muted">تناقض‌ها را کنار هم بگذار؛ هنوز زود است نتیجه بگیری.</p>
+   <button class="goldbtn full" onclick="stage('accuse')">ثبت اتهام نهایی ←</button>
+  </section>
+ </div>
 </section>
 
-<footer class="footer">CASE ZERO © · هر سرنخ، تکه‌ای از حقیقت است.<br>نسخه آزمایشی · پرونده‌های جدید در راه‌اند.</footer>
+<section id="interrogation" class="screen">
+ <div class="panel"><div class="panelTitle">▣ اتاق بازجویی <span>پرونده ۰۰۱</span></div><h2 id="intTitle">بازجویی</h2><div class="chatbox"><div class="bubble">شب حادثه کجا بودی؟</div><div class="bubble sus" id="reply">مظنون را از فهرست انتخاب کن.</div></div>
+ <div class="choices"><button class="choice" onclick="ask(0)">سؤال درباره زمان حضور</button><button class="choice" onclick="ask(1)">نمایش گزارش کارت ورود</button><button class="choice" onclick="ask(2)">سؤال درباره جلیقه زرد</button></div>
+ <div id="intFeedback" class="toast"></div><button class="primary full" onclick="stage('accuse')">رفتن به اتهام نهایی ←</button><button class="secondary full" onclick="stage('game')">بازگشت به پرونده</button></div>
+</section>
+
+<section id="accuse" class="screen">
+ <div class="panel"><div class="panelTitle">⚑ اتهام نهایی <span>تصمیم سرنوشت‌ساز</span></div><h2>چه کسی کیف را دزدیده؟</h2><p>با توجه به مدارک و پاسخ‌های بازجویی، متهم را انتخاب کن.</p><div class="suspects">
+ <button class="person" onclick="accuse(0)"><div class="portrait">👨🏻‍✈️</div><b>کامران</b><small>سرپرست</small></button><button class="person" onclick="accuse(1)"><div class="portrait">👩🏻‍💼</div><b>نرگس</b><small>فروش بلیت</small></button><button class="person" onclick="accuse(2)"><div class="portrait">🧑🏻‍🔧</div><b>سامان</b><small>تکنسین سکو</small></button><button class="person" onclick="accuse(3)"><div class="portrait">👨🏽‍💼</div><b>بهرام</b><small>نگهبان شب</small></button></div>
+ <div id="result" class="toast"></div><button id="again" class="primary full" style="display:none" onclick="start()">شروع دوباره پرونده</button></div>
+</section>
+</main>
 </div>
-
+<div class="adbar"><b>روبراه سرویس</b><span>خدمات نصب، گارانتی و تعمیر</span><a href="tel:02168287">☎ 02168287</a></div>
+<footer>پرونده صفر · واحد تحقیقات ویژه</footer>
+</div>
 <script>
-let opened = [false,false,false];
-let selected = -1;
-let finished = false;
-let score = Number(localStorage.getItem('cz_score') || 0);
-let solved = Number(localStorage.getItem('cz_solved') || 0);
-
-function refreshStats(){
-  document.getElementById('scoreStat').textContent = score;
-  document.getElementById('solvedStat').textContent = solved;
-  document.getElementById('rankStat').textContent =
-    score >= 150 ? 'نابغه' : score >= 70 ? 'کارآگاه' : 'تازه‌کار';
-}
-function showScreen(id){
-  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  window.scrollTo(0,0);
-}
-function startGame(){
-  opened=[false,false,false];selected=-1;finished=false;
-  document.querySelectorAll('.clue').forEach(b=>b.classList.remove('opened'));
-  document.querySelectorAll('.note').forEach(n=>n.classList.remove('show'));
-  document.querySelectorAll('.suspect').forEach(b=>b.classList.remove('selected'));
-  document.getElementById('clueCount').textContent='۰ از ۳ بررسی شده';
-  document.getElementById('bar').style.width='0%';
-  document.getElementById('feedback').className='feedback';
-  document.getElementById('nextButton').style.display='none';
-  document.querySelector('.primary[onclick="accuse()"]').style.display='block';
-  showScreen('game');
-}
-function reveal(i){
-  if(finished)return;
-  opened[i]=true;
-  document.getElementById('note'+i).classList.add('show');
-  document.querySelectorAll('.clue')[i].classList.add('opened');
-  const count=opened.filter(Boolean).length;
-  document.getElementById('clueCount').textContent=
-    ['۰','۱','۲','۳'][count]+' از ۳ بررسی شده';
-  document.getElementById('bar').style.width=(count/3*100)+'%';
-}
-function choose(i){
-  if(finished)return;
-  selected=i;
-  document.querySelectorAll('.suspect').forEach((b,n)=>b.classList.toggle('selected',n===i));
-}
-function accuse(){
-  if(finished)return;
-  const feedback=document.getElementById('feedback');
-  feedback.className='feedback show';
-  if(selected===-1){
-    feedback.textContent='اول یکی از مظنون‌ها را انتخاب کن.';
-    feedback.classList.add('bad');return;
-  }
-  if(opened.filter(Boolean).length<3){
-    feedback.textContent='هنوز همه سرنخ‌ها را بررسی نکرده‌ای. کارآگاه دقیق هیچ جزئیاتی را نادیده نمی‌گیرد.';
-    feedback.classList.add('bad');return;
-  }
-  finished=true;
-  if(selected===2){
-    const earned=100;
-    score+=earned;solved++;
-    localStorage.setItem('cz_score',score);
-    localStorage.setItem('cz_solved',solved);
-    feedback.innerHTML='✓ <b>پرونده حل شد!</b><br>سامان، تکنسین سکو، دروغ می‌گفت. جلیقه زرد او با انعکاس دوربین مطابقت دارد و حضورش در مسیر رد کفش‌ها توضیح می‌دهد که چگونه به اتاق کنترل رسیده است. کارت ثبت‌شده نیز نشان می‌دهد زمان‌بندی روایت مظنون‌ها با گزارش دستگاه همخوانی ندارد.<br><br>پاداش: +۱۰۰ امتیاز کارآگاهی';
-    feedback.classList.add('good');
-  }else{
-    feedback.innerHTML='اتهام ثبت شد، اما شواهد کافی برای محکوم کردن این مظنون وجود ندارد. پاسخ پرونده: <b>سامان، تکنسین سکو</b>. سرنخ دوربین و رد کفش خیس را دوباره بررسی کن.';
-    feedback.classList.add('bad');
-  }
-  document.querySelector('.primary[onclick="accuse()"]').style.display='none';
-  document.getElementById('nextButton').style.display='block';
-  refreshStats();
-}
-function goHome(){refreshStats();showScreen('home')}
-refreshStats();
+const $=id=>document.getElementById(id);
+const fa=n=>String(n).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
+let found=[false,false,false], selected=-1, done=false, points=+(localStorage.cz_score||0), solved=+(localStorage.cz_solved||0);
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$(id).classList.add('active');window.scrollTo(0,0);if(id==='scores'){ $('scoreDisplay').textContent=fa(points);$('rankDisplay').textContent='رتبه: '+(points>=200?'خبره':points>=100?'کارآگاه':'تازه‌کار')}}
+function start(){found=[false,false,false];selected=-1;done=false;['d0','d1','d2'].forEach(id=>$(id).classList.remove('show'));$('bar').style.width='0';$('clueCount').textContent='۰/۳';$('next').disabled=true;$('result').className='toast';$('again').style.display='none';document.querySelectorAll('#game .person,#accuse .person').forEach(b=>{b.classList.remove('selected');b.disabled=false});$('picked').textContent='برای بازجویی، یک مظنون انتخاب کن.';show('game')}
+function reveal(i){found[i]=true;$('d'+i).classList.add('show');document.querySelectorAll('#game .clue')[i].classList.add('active');let n=found.filter(Boolean).length;$('clueCount').textContent=fa(n)+'/۳';$('bar').style.width=(n/3*100)+'%';$('next').disabled=n<3}
+const names=['کامران','نرگس','سامان','بهرام'], roles=['سرپرست ایستگاه','مسئول فروش بلیت','تکنسین سکو','نگهبان شب'];
+function pick(i){selected=i;document.querySelectorAll('#game .person').forEach((b,n)=>b.classList.toggle('selected',n===i));$('picked').textContent=names[i]+' · '+roles[i];$('intTitle').textContent='بازجویی از '+names[i];}
+function stage(id){show(id)}
+function ask(i){if(selected<0){$('intFeedback').className='toast show bad';$('intFeedback').textContent='ابتدا از صفحه پرونده یک مظنون انتخاب کن.';return}let answers=[
+ ['من بعد از یازده و پنجاه آنجا نبودم.','کارت من روی میز بود؛ شاید کسی آن را برداشته.','جلیقه زرد برای کارکنان سکو است.'],
+ ['تمام شب پشت باجه بودم.','من اجازه ورود به اتاق کنترل ندارم.','من جلیقه زرد نمی‌پوشم.'],
+ ['من تجهیزات سکو را بررسی می‌کردم.','کارت کنترل دست من نیست.','ممکن است جلیقه من در تصویر باشد؛ اما وارد اتاق نشدم.'],
+ ['مشغول گشت شبانه بودم.','به کارت سرپرست دسترسی ندارم.','جلیقه زرد لباس کارکنان سکو است.']
+];$('reply').textContent=answers[selected][i];$('intFeedback').className='toast show';$('intFeedback').textContent='پاسخ ثبت شد؛ آن را با مدارک مقایسه کن.'}
+function accuse(i){if(done)return;done=true;let r=$('result');r.className='toast show';if(i===2){points+=100;solved++;localStorage.cz_score=points;localStorage.cz_solved=solved;r.classList.add('good');r.innerHTML='<b>پرونده حل شد!</b><br>سامان، تکنسین سکو، با شواهد موجود بیشترین تطابق را دارد. جلیقه زرد و رد کفش مسیر حضور او را نشان می‌دهند.<br><br>پاداش: ۱۰۰ امتیاز';}else{r.classList.add('bad');r.innerHTML='<b>اتهام تأیید نشد.</b><br>این انتخاب با تمام سرنخ‌ها مطابقت ندارد. مدارک را دوباره بررسی کن؛ پاسخ این پرونده سامان است.'}document.querySelectorAll('#accuse .person').forEach(b=>b.disabled=true);$('again').style.display='block'}
+let ctx,master,on=false;
+function toggleSound(){on=!on;$('sound').textContent=on?'♫ صدا روشن':'♫ صدا خاموش';if(on){const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;if(!ctx){ctx=new AC();master=ctx.createGain();master.gain.value=.15;master.connect(ctx.destination);[55,82.4,110].forEach((hz,i)=>{let o=ctx.createOscillator(),g=ctx.createGain(),f=ctx.createBiquadFilter();o.type=i===1?'triangle':'sine';o.frequency.value=hz;f.type='lowpass';f.frequency.value=180;g.gain.value=[.25,.08,.04][i];o.connect(f);f.connect(g);g.connect(master);o.start()});}ctx.resume();master.gain.setTargetAtTime(.15,ctx.currentTime,.4)}else if(ctx){master.gain.setTargetAtTime(.0001,ctx.currentTime,.2)}}
 </script>
 </body>
 </html>
