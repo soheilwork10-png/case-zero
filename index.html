@@ -1,284 +1,44 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name="theme-color" content="#050a12">
-<title>پرونده صفر | مرکز تحقیقات</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#061116">
+<title>شکارچی رمز | CODE HUNTER</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
-:root{--bg:#050a12;--panel:#0a1421;--panel2:#0d1b2b;--line:#183c59;--cyan:#13d8f1;--blue:#087bd1;--gold:#e6bb78;--red:#ff344b;--txt:#e8f4ff;--muted:#7893ac}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--txt);font:13px Vazirmatn,Tahoma,sans-serif}
-button{font:inherit;cursor:pointer}
-button:focus-visible{outline:2px solid var(--cyan)}
-button:disabled{opacity:.45;cursor:not-allowed}
-.app{max-width:1500px;margin:auto;padding:12px;background:radial-gradient(ellipse at 50% 0,#0c2943 0,transparent 45%)}
-.topbar{height:54px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:0 12px;margin-bottom:12px}
-.brand{display:flex;align-items:center;gap:10px}
-.logo{height:38px;width:38px;border:1px solid var(--cyan);border-radius:10px;display:grid;place-items:center;color:var(--cyan);font-size:25px;text-shadow:0 0 15px var(--cyan)}
-.brand b{display:block;font-size:16px;letter-spacing:1px}
-.brand small{font-size:9px;color:var(--muted);letter-spacing:2px}
-.toplinks{display:flex;gap:7px}
-.toplinks button,.sound{border:1px solid transparent;background:transparent;color:#a7c5df;padding:9px 12px;border-radius:8px}
-.toplinks button:hover,.sound:hover{border-color:var(--line);color:var(--cyan)}
-.layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:12px}
-.adside{background:linear-gradient(180deg,#101b2b,#070c14);border:1px solid #23394e;border-radius:12px;padding:18px 15px;display:flex;flex-direction:column;gap:16px;min-width:0}
-.roberah{font-size:22px;font-weight:800;color:var(--gold)}
-.roberah small{display:block;color:#c7d4e3;font-size:11px;font-weight:500}
-.rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
-.adside h3{font-size:16px;margin:0;line-height:2}
-.adside h3 span{color:var(--gold)}
-.phone{background:linear-gradient(100deg,#e4bc7b,#b98b48);color:#08111c;padding:12px 6px;border-radius:40px;text-align:center;font-size:20px;font-weight:800;direction:ltr}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;text-align:center}
-.service{font-size:10px;color:#c9d9e8}
-.service i{font-style:normal;width:43px;height:43px;margin:0 auto 7px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:23px}
-.brandbosch{text-align:center;font-size:25px;font-weight:900;color:#ed2438;letter-spacing:1px}
-.brandbosch span{color:#d9e8f7;font-size:22px}
-.appliance{flex:1;min-height:130px;border-radius:8px;background:linear-gradient(180deg,#0b1724,#152637 55%,#070d15);display:flex;justify-content:center;align-items:center;gap:8px;padding:15px 5px}
-.appliance div{height:105px;flex:1;max-width:75px;border:1px solid #8093a4;border-radius:5px;background:linear-gradient(90deg,#344656,#a5b6c2 18%,#293847 28%,#778b99 70%,#1a2734);box-shadow:inset 0 0 20px #0008;position:relative}
-.appliance div:after{content:"";position:absolute;top:25%;left:10%;width:80%;aspect-ratio:1;border-radius:50%;border:5px solid #172532;box-shadow:inset 0 0 12px #000;background:radial-gradient(circle,#65798b,#111b27)}
-.appliance div:last-child:after{top:12%;height:5px;aspect-ratio:auto;border-radius:0}
-.adside .slogan{text-align:center;font-size:11px;color:#c5d1df;line-height:2}
-.workspace{min-width:0}
-.hero{height:220px;border:1px solid #1c4c6a;border-radius:12px;overflow:hidden;position:relative;display:flex;align-items:center;padding:25px;background:linear-gradient(100deg,#07111e 0%,#0b2339 48%,#050b13 100%);margin-bottom:12px}
-.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(110deg,transparent 0 34px,#58b7ff08 35px 36px),radial-gradient(ellipse at 75% 55%,#13507a70,transparent 50%)}
-.hero:after{content:"";position:absolute;left:8%;right:8%;bottom:0;height:48px;background:repeating-linear-gradient(90deg,#081522 0 18px,#14283a 19px 28px,transparent 29px 40px);opacity:.8}
-.heroContent{position:relative;z-index:1;max-width:460px}
-.eyebrow{font-size:10px;letter-spacing:2px;color:var(--cyan)}
-h1{font-size:clamp(24px,3.5vw,43px);margin:10px 0;line-height:1.6}
-h1 em{font-style:normal;color:var(--red)}
-.hero p{font-size:12px;line-height:2;color:#a8c3d9}
-.primary,.goldbtn{border:0;border-radius:7px;padding:11px 16px;background:linear-gradient(100deg,#0874ce,#00a8da);color:white;font-weight:700}
-.goldbtn{background:linear-gradient(100deg,#c89a58,#f0cf8f);color:#10151c}
-.mainGrid{display:grid;grid-template-columns:1.02fr 1fr 1fr;gap:12px;align-items:stretch}
-.panel{min-width:0;background:linear-gradient(155deg,#0d1a29,#080f19);border:1px solid var(--line);border-radius:11px;padding:13px;box-shadow:0 8px 28px #0002}
-.panelTitle{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #19334a;padding-bottom:11px;margin-bottom:11px;font-size:13px;font-weight:700}
-.panelTitle span{color:var(--cyan);font-size:10px}
-.clue{width:100%;display:flex;align-items:center;text-align:right;gap:10px;padding:8px;margin:8px 0;background:#0b1a29;border:1px solid #17415e;border-radius:9px;color:var(--txt)}
-.clue:hover,.clue.active{border-color:var(--cyan);background:#0c2536}
-.thumb{height:65px;width:65px;flex-shrink:0;border-radius:6px;border:1px solid #365a76;display:grid;place-items:center;font-size:28px;background:radial-gradient(circle,#1d4058,#09121e)}
-.clue b{display:block;font-size:12px}
-.clue small{display:block;font-size:10px;color:var(--muted);line-height:1.8;margin-top:5px}
-.plus{margin-right:auto;color:var(--cyan);font-size:20px}
-.detail{display:none;background:#07111c;border-right:2px solid var(--cyan);padding:10px;font-size:11px;line-height:2;color:#c3d4e5}
-.detail.show{display:block}
-.progress{height:5px;background:#1b2c3d;border-radius:8px;margin:14px 0;overflow:hidden}
-.progress div{height:100%;width:0;background:var(--cyan);transition:.3s;box-shadow:0 0 10px var(--cyan)}
-.muted{font-size:10px;color:var(--muted)}
-.suspects{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.person{background:#0a1725;border:1px solid #17415e;border-radius:9px;overflow:hidden;padding:0;color:var(--txt);text-align:center}
-.portrait{height:110px;display:grid;place-items:center;font-size:54px;background:radial-gradient(ellipse at 50% 35%,#35546c,#142437 55%,#07111b);border-bottom:1px solid #21445d}
-.person b{display:block;padding-top:8px;font-size:12px}
-.person small{display:block;padding:3px 4px 9px;color:var(--cyan);font-size:10px}
-.person.selected{border-color:var(--cyan);box-shadow:0 0 14px #13d8f126}
-.person.selected .portrait{background:radial-gradient(ellipse at 50% 35%,#416f83,#173449 55%,#07111b)}
-.full{width:100%;margin-top:12px}
-.evidenceBoard{min-height:205px;padding:13px;border-radius:9px;border:1px solid #5b472e;background:radial-gradient(ellipse at 40% 20%,#4a3826,#201b19 65%,#111319);position:relative;overflow:hidden}
-.evidenceBoard:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 24px,#d5ad7b08 25px 26px)}
-.paper{position:relative;margin:7px 0;padding:10px;background:#c8b18a;color:#1c2027;font-size:11px;transform:rotate(-1deg);box-shadow:0 4px 12px #0008}
-.paper:nth-child(2){transform:rotate(1.5deg);background:#d8d8cf}
-.paper b{display:block;font-size:12px}
-.redline{height:2px;background:#b92f36;width:55%;margin:7px auto;transform:rotate(-13deg)}
-.chatbox{background:#080f19;border:1px solid #183850;border-radius:9px;padding:10px;margin-top:12px}
-.bubble{padding:10px;border-radius:9px;background:#102c46;font-size:11px;line-height:2;margin:7px 0 7px auto;max-width:94%}
-.bubble.sus{background:#1b2736;margin-right:auto;margin-left:0}
-.choices{display:grid;gap:7px;margin-top:10px}
-.choice{background:#0b1a29;border:1px solid #24435d;border-radius:7px;color:#d8e9f9;text-align:right;padding:10px;font-size:11px}
-.choice:hover{border-color:var(--cyan)}
-.bottom{display:grid;grid-template-columns:1fr auto;align-items:center;gap:15px;margin-top:12px;padding:14px 17px;border:1px solid #27465e;border-radius:10px;background:linear-gradient(100deg,#0c1927,#111a24)}
-.bottom strong{font-size:13px;color:var(--gold)}
-.bottom p{margin:5px 0 0;font-size:10px;color:var(--muted)}
-.admini{display:flex;align-items:center;gap:12px;font-size:10px;color:#b8c9db}
-.admini b{color:var(--gold);font-size:12px;white-space:nowrap}
-.admini a{color:var(--gold);font-weight:800;text-decoration:none;direction:ltr;white-space:nowrap}
-.screen{display:none}
-.screen.active{display:block}
-.toast{display:none;padding:12px;border-radius:8px;margin-top:10px;line-height:2;font-size:11px}
-.toast.show{display:block}
-.toast.good{background:#0b2b27;border:1px solid #1c8678}
-.toast.bad{background:#30231b;border:1px solid #a56e3a}
-.adbar{margin:14px 0 2px;padding:8px 10px;border:1px solid #6d57364a;background:#18150f;border-radius:7px;display:flex;justify-content:center;gap:9px;align-items:center;flex-wrap:wrap;font-size:10px;color:#c2cedb}
-.adbar b{color:var(--gold)}
-.adbar a{color:var(--gold);text-decoration:none;font-weight:800;direction:ltr}
-footer{text-align:center;font-size:9px;color:#536d84;padding:12px}
-@media(max-width:900px){
- .layout{grid-template-columns:190px minmax(0,1fr)}
- .mainGrid{grid-template-columns:1fr 1fr}
- .mainGrid .panel:last-child{grid-column:1/-1}
- .portrait{height:90px}
- .hero{height:190px}
-}
-@media(max-width:600px){
- .app{padding:8px}
- .topbar{padding:0 4px}
- .toplinks button{padding:8px 5px;font-size:10px}
- .brand b{font-size:14px}
- .layout{display:flex;flex-direction:column}
- .adside{order:2;padding:12px;gap:10px}
- .adside .appliance{display:none}
- .adside .rule,.adside .slogan{display:none}
- .services{max-width:280px;margin:auto;width:100%}
- .workspace{order:1}
- .hero{height:165px;padding:16px}
- .hero p{max-width:300px}
- .mainGrid{grid-template-columns:1fr}
- .mainGrid .panel:last-child{grid-column:auto}
- .portrait{height:120px}
- .bottom{grid-template-columns:1fr}
- .admini{justify-content:space-between}
- .toplinks button:nth-child(3){display:none}
-}
-</style>
-</head>
-<body>
-<div class="app">
-<header class="topbar">
- <div class="brand"><div class="logo">⌕</div><div><b>پرونده صفر</b><small>CASE ZERO · INVESTIGATION UNIT</small></div></div>
- <nav class="toplinks">
-  <button onclick="show('home')">⌂ میز کار</button>
-  <button onclick="show('files')">▤ پرونده‌ها</button>
-  <button onclick="show('scores')">♜ امتیازات</button>
-  <button class="sound" id="sound" onclick="toggleSound()">♫ صدا خاموش</button>
- </nav>
-</header>
-
-<div class="layout">
-<aside class="adside">
- <div class="roberah">R <small>ROBERAHSERVICE<br>روبراه سرویس</small></div>
- <div class="rule"></div>
- <h3>خدمات <span>تخصصی</span><br><span>نصب · گارانتی · تعمیر</span></h3>
- <a class="phone" href="tel:02168287" style="text-decoration:none">☎ 021 68287</a>
- <div class="services">
-  <div class="service"><i>⚒</i>نصب</div>
-  <div class="service"><i>♢</i>گارانتی</div>
-  <div class="service"><i>⚙</i>تعمیر</div>
- </div>
- <div class="rule"></div>
- <div class="muted" style="text-align:center">نمایندگی رسمی</div>
- <div class="brandbosch"><span>⊙</span> BOSCH</div>
- <div class="appliance"><div></div><div></div><div></div></div>
- <div class="slogan">کیفیت، اعتماد، آرامش<br>روبراه سرویس</div>
-</aside>
-
-<main class="workspace">
-<section id="home" class="screen active">
- <div class="hero"><div class="heroContent">
-  <div class="eyebrow">● پرونده‌های محرمانه · واحد ۰۰۱</div>
-  <h1>پرونده <em>صفر</em></h1>
-  <p>یک حقیقت، هزار دروغ.<br>به چیزی که می‌بینی اعتماد نکن؛ شواهد را دنبال کن.</p>
-  <button class="primary" onclick="start()">شروع تحقیقات ←</button>
- </div></div>
- <div class="mainGrid">
-  <section class="panel">
-   <div class="panelTitle">▤ پرونده‌های فعال <span>۱/۶</span></div>
-   <div class="clue" style="cursor:default"><div class="thumb">🚉</div><div><b>آخرین قطار نیمه‌شب</b><small>پرونده ۰۰۱ · سرقت اسناد</small><small style="color:var(--red)">● محرمانه</small></div></div>
-   <p class="muted">ساعت ۰۰:۱۷، کیف اسناد از اتاق کنترل ایستگاه ناپدید شد. چهار مظنون، سه مدرک و یک حقیقت پنهان.</p>
-   <button class="primary full" onclick="start()">ورود به پرونده +</button>
-   <div class="clue" style="opacity:.5;cursor:default"><div class="thumb">🔒</div><div><b>زنجیره تاریک</b><small>پس از حل پرونده اول</small></div></div>
-  </section>
-  <section class="panel">
-   <div class="panelTitle">♙ مظنون‌ها <span>۰/۴</span></div>
-   <div class="suspects">
-    <button class="person" onclick="pick(0)"><div class="portrait">👨🏻‍✈️</div><b>کامران</b><small>سرپرست ایستگاه</small></button>
-    <button class="person" onclick="pick(1)"><div class="portrait">👩🏻‍💼</div><b>نرگس</b><small>مسئول فروش بلیت</small></button>
-    <button class="person" onclick="pick(2)"><div class="portrait">🧑🏻‍🔧</div><b>سامان</b><small>تکنسین سکو</small></button>
-    <button class="person" onclick="pick(3)"><div class="portrait">👨🏽‍💼</div><b>بهرام</b><small>نگهبان شب</small></button>
-   </div>
-   <button class="secondary full" onclick="start()">▣ بازجویی و بررسی پرونده</button>
-  </section>
-  <section class="panel">
-   <div class="panelTitle">▧ دیوار شواهد <span>۳ مدرک</span></div>
-   <div class="evidenceBoard">
-    <div class="paper"><b>گزارش ورود</b>کارت سرپرست · ساعت ۰۰:۱۲</div>
-    <div class="redline"></div>
-    <div class="paper"><b>اثر کفش خیس</b>رد از پنجره تا میز کنترل</div>
-    <div class="redline"></div>
-    <div class="paper"><b>تصویر دوربین</b>جلیقه زرد · ساعت ۰۰:۱۴</div>
-   </div>
-   <p class="muted">هر مدرک، یک تناقض را آشکار می‌کند.</p>
-   <button class="secondary full" onclick="start()">مشاهده مدارک ←</button>
-  </section>
- </div>
- <div class="bottom"><div><strong>وقتی حقیقت پنهان می‌شود، ما دنبالش می‌گردیم.</strong><p>واحد تحقیقات ویژه · پرونده صفر</p></div><div class="admini"><b>روبراه سرویس</b><a href="tel:02168287">021 68287</a></div></div>
-</section>
-
-<section id="files" class="screen">
- <div class="panel"><div class="panelTitle">▤ پرونده‌ها <span>آرشیو</span></div><h2>آخرین قطار نیمه‌شب</h2><p>پرونده شماره ۰۰۱ در دسترس است. سایر پرونده‌ها پس از تکمیل مراحل بعدی اضافه می‌شوند.</p><button class="primary" onclick="start()">ادامه پرونده ←</button></div>
-</section>
-<section id="scores" class="screen">
- <div class="panel"><div class="panelTitle">♜ امتیازات کارآگاه</div><h1 id="scoreDisplay">۰</h1><p>امتیاز ثبت‌شده روی همین دستگاه</p><div class="rule"></div><p id="rankDisplay">رتبه: تازه‌کار</p><button class="secondary" onclick="show('home')">بازگشت</button></div>
-</section>
-
-<section id="game" class="screen">
- <div class="hero" style="height:150px"><div class="heroContent"><div class="eyebrow">CASE 001 · محرمانه</div><h1 style="font-size:25px">آخرین قطار <em>نیمه‌شب</em></h1><p>هر سه مدرک را بررسی کن و سپس اتهام نهایی را ثبت کن.</p></div></div>
- <div class="mainGrid">
-  <section class="panel">
-   <div class="panelTitle">▧ بررسی سرنخ‌ها <span id="clueCount">۰/۳</span></div>
-   <button class="clue" onclick="reveal(0)"><div class="thumb">🪪</div><div><b>کارت ورود</b><small>گزارش دستگاه دسترسی</small></div><span class="plus">＋</span></button>
-   <div class="detail" id="d0">کارت کامران ساعت ۰۰:۱۲ در اتاق کنترل ثبت شده؛ او می‌گوید آن ساعت آنجا نبوده است.</div>
-   <button class="clue" onclick="reveal(1)"><div class="thumb">👞</div><div><b>رد کفش خیس</b><small>کنار پنجره قفل‌شده</small></div><span class="plus">＋</span></button>
-   <div class="detail" id="d1">رد کفش از پنجره تا میز کنترل می‌رود. اندازه ردها با کفش کارکنان سکو مطابقت دارد.</div>
-   <button class="clue" onclick="reveal(2)"><div class="thumb">📹</div><div><b>تصویر دوربین</b><small>آخرین فریم</small></div><span class="plus">＋</span></button>
-   <div class="detail" id="d2">در انعکاس شیشه، فردی با جلیقه زرد دیده می‌شود؛ لباس کارکنان سکوی بیرونی.</div>
-   <div class="progress"><div id="bar"></div></div><button id="next" class="primary full" disabled onclick="stage('interrogation')">ورود به بازجویی ←</button>
-  </section>
-  <section class="panel">
-   <div class="panelTitle">♙ انتخاب مظنون <span>۱ نفر</span></div>
-   <div class="suspects">
-    <button class="person" onclick="pick(0)"><div class="portrait">👨🏻‍✈️</div><b>کامران</b><small>سرپرست</small></button>
-    <button class="person" onclick="pick(1)"><div class="portrait">👩🏻‍💼</div><b>نرگس</b><small>فروش بلیت</small></button>
-    <button class="person" onclick="pick(2)"><div class="portrait">🧑🏻‍🔧</div><b>سامان</b><small>تکنسین سکو</small></button>
-    <button class="person" onclick="pick(3)"><div class="portrait">👨🏽‍💼</div><b>بهرام</b><small>نگهبان شب</small></button>
-   </div>
-   <div class="chatbox"><div class="muted">یادداشت کارآگاه</div><p id="picked">برای بازجویی، یک مظنون انتخاب کن.</p></div>
-   <button class="secondary full" onclick="stage('interrogation')">گفت‌وگو و بازجویی ←</button>
-  </section>
-  <section class="panel">
-   <div class="panelTitle">▤ دیوار شواهد <span>پرونده ۰۰۱</span></div>
-   <div class="evidenceBoard"><div class="paper"><b>کارت ورود</b>۰۰:۱۲ · اتاق کنترل</div><div class="redline"></div><div class="paper"><b>رد کفش</b>مسیر سکوی بیرونی</div><div class="redline"></div><div class="paper"><b>دوربین</b>جلیقه زرد</div></div>
-   <p class="muted">تناقض‌ها را کنار هم بگذار؛ هنوز زود است نتیجه بگیری.</p>
-   <button class="goldbtn full" onclick="stage('accuse')">ثبت اتهام نهایی ←</button>
-  </section>
- </div>
-</section>
-
-<section id="interrogation" class="screen">
- <div class="panel"><div class="panelTitle">▣ اتاق بازجویی <span>پرونده ۰۰۱</span></div><h2 id="intTitle">بازجویی</h2><div class="chatbox"><div class="bubble">شب حادثه کجا بودی؟</div><div class="bubble sus" id="reply">مظنون را از فهرست انتخاب کن.</div></div>
- <div class="choices"><button class="choice" onclick="ask(0)">سؤال درباره زمان حضور</button><button class="choice" onclick="ask(1)">نمایش گزارش کارت ورود</button><button class="choice" onclick="ask(2)">سؤال درباره جلیقه زرد</button></div>
- <div id="intFeedback" class="toast"></div><button class="primary full" onclick="stage('accuse')">رفتن به اتهام نهایی ←</button><button class="secondary full" onclick="stage('game')">بازگشت به پرونده</button></div>
-</section>
-
-<section id="accuse" class="screen">
- <div class="panel"><div class="panelTitle">⚑ اتهام نهایی <span>تصمیم سرنوشت‌ساز</span></div><h2>چه کسی کیف را دزدیده؟</h2><p>با توجه به مدارک و پاسخ‌های بازجویی، متهم را انتخاب کن.</p><div class="suspects">
- <button class="person" onclick="accuse(0)"><div class="portrait">👨🏻‍✈️</div><b>کامران</b><small>سرپرست</small></button><button class="person" onclick="accuse(1)"><div class="portrait">👩🏻‍💼</div><b>نرگس</b><small>فروش بلیت</small></button><button class="person" onclick="accuse(2)"><div class="portrait">🧑🏻‍🔧</div><b>سامان</b><small>تکنسین سکو</small></button><button class="person" onclick="accuse(3)"><div class="portrait">👨🏽‍💼</div><b>بهرام</b><small>نگهبان شب</small></button></div>
- <div id="result" class="toast"></div><button id="again" class="primary full" style="display:none" onclick="start()">شروع دوباره پرونده</button></div>
-</section>
-</main>
-</div>
-<div class="adbar"><b>روبراه سرویس</b><span>خدمات نصب، گارانتی و تعمیر</span><a href="tel:02168287">☎ 02168287</a></div>
-<footer>پرونده صفر · واحد تحقیقات ویژه</footer>
-</div>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
+:root{--bg:#050b10;--panel:#091820;--panel2:#0b2028;--line:#16424b;--cyan:#32e5f0;--gold:#e7b879;--muted:#88a7ad;--red:#ff6477;--green:#8bffc5;--shadow:0 20px 70px #0009}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 10%,#0b3740 0,transparent 35%),radial-gradient(ellipse at 90% 85%,#322113 0,transparent 28%),var(--bg);color:#eafcff;font-family:'Vazirmatn',Tahoma,sans-serif;min-height:100vh;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.11;background-image:linear-gradient(#47e7f0 1px,transparent 1px),linear-gradient(90deg,#47e7f0 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(black,transparent 80%)}button{font:inherit;cursor:pointer}button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}.shell{max-width:1420px;margin:auto;padding:18px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}.brand{display:flex;align-items:center;gap:12px}.brandmark{width:44px;height:44px;border:1px solid #2b8b94;border-radius:13px;display:grid;place-items:center;color:var(--cyan);background:#06232a;box-shadow:0 0 24px #18b9ca20;font-size:24px}.brandname{font-weight:900;letter-spacing:2px;font-size:14px}.brandname small{display:block;color:var(--muted);font-size:10px;letter-spacing:3px;font-weight:500}.topactions{display:flex;gap:8px}.iconbtn{width:42px;height:42px;border:1px solid var(--line);border-radius:12px;background:#07161d;color:var(--cyan);font-size:17px}.layout{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(340px,.82fr);gap:16px;align-items:stretch}.hero,.gamepanel{position:relative;border:1px solid #17414a;border-radius:22px;overflow:hidden;background:linear-gradient(145deg,#0b2028f2,#061116f5);box-shadow:var(--shadow)}.hero{min-height:670px;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(22px,4vw,48px)}.hero-art{position:absolute;inset:0;background:linear-gradient(90deg,#041016e8 0%,#0410169e 52%,#04101632 100%),url('assets/concept-art.png') center/cover;opacity:.35;filter:saturate(.85);mix-blend-mode:screen}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#061116 0%,transparent 42%,#06111635);pointer-events:none}.hero>*:not(.hero-art){position:relative;z-index:1}.eyebrow{font-size:11px;color:var(--cyan);letter-spacing:3px;font-weight:700;display:flex;align-items:center;gap:10px}.eyebrow:before{content:"";width:26px;height:1px;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}.titlewrap{margin:auto 0;text-align:center;padding:30px 0}.fingerprint{font-size:48px;color:var(--cyan);filter:drop-shadow(0 0 18px #31e4f0a0);margin-bottom:6px}.game-title{font-size:clamp(42px,6vw,82px);line-height:1.15;margin:0;font-weight:900;letter-spacing:-2px;text-shadow:0 0 32px #19dce526}.english{direction:ltr;letter-spacing:clamp(5px,1vw,12px);color:var(--cyan);font-size:clamp(13px,2vw,20px);margin-top:15px;font-weight:500}.tagline{color:#c2d6d8;line-height:2;margin:22px auto 0;max-width:370px}.primary{border:1px solid #55f4fb;background:linear-gradient(100deg,#0e6874,#0c313b);color:#fff;border-radius:13px;padding:15px 24px;font-weight:800;box-shadow:0 0 28px #23d6e126;transition:.2s}.primary:hover{transform:translateY(-2px);box-shadow:0 0 35px #23d6e14a}.primary:disabled{opacity:.35;cursor:not-allowed;transform:none}.startbtn{min-width:220px;font-size:18px}.hero-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.feature{border-top:1px solid #1a4a53;padding-top:14px;text-align:center;color:var(--muted);font-size:12px}.feature b{display:block;color:#d5f8fa;font-size:13px;font-weight:600;margin-bottom:4px}.gamepanel{padding:18px;display:flex;flex-direction:column;min-height:670px}.panelhead{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 14px;background:#0b2630;border:1px solid #1d5962;border-radius:14px}.stage{font-weight:700}.stage small{display:block;color:var(--muted);font-size:11px;font-weight:400;margin-top:2px}.coin{color:var(--gold);font-weight:800;white-space:nowrap}.progress{height:4px;background:#102a31;border-radius:9px;margin:14px 2px 20px;overflow:hidden}.progress span{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--gold));width:0;transition:width .4s;box-shadow:0 0 12px var(--cyan)}.mission{border:1px solid #173c45;border-radius:16px;background:linear-gradient(135deg,#0b1f27,#061116);padding:20px;position:relative;overflow:hidden}.mission:after{content:"";position:absolute;width:150px;height:150px;border:1px solid #1d778033;border-radius:50%;left:-45px;top:-60px;box-shadow:0 0 0 18px #1d778012,0 0 0 38px #1d77800a}.mission .label{color:var(--cyan);font-size:11px;letter-spacing:2px}.mission h2{font-size:22px;margin:8px 0}.mission p{font-size:13px;line-height:2;color:#b6cdd0;margin:0;position:relative;z-index:1}.hint{border-right:2px solid var(--gold);padding:8px 12px;margin:14px 0;background:#e7b8790c;color:#d7c5a8;font-size:12px;line-height:1.9}.codebox{margin-top:14px;border:1px solid #1d454d;border-radius:16px;background:#061117;padding:16px}.codehead{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:13px}.codehead span{color:var(--muted);font-size:11px}.slots{display:flex;direction:ltr;justify-content:center;gap:9px;margin:14px 0 16px}.slot{width:43px;height:49px;border:1px solid #28616a;background:#071d24;border-radius:9px;display:grid;place-items:center;color:var(--cyan);font-size:23px;font-weight:800;box-shadow:inset 0 0 16px #1ce6f00a}.slot.filled{border-color:var(--cyan);box-shadow:0 0 12px #26d8e526}.keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:300px;margin:auto}.key{height:43px;background:linear-gradient(180deg,#0d2a34,#081921);border:1px solid #20505a;border-radius:10px;color:#d9fbfc;font-size:17px;transition:.12s}.key:hover{border-color:var(--cyan);color:var(--cyan);background:#10343d}.key.special{color:var(--cyan)}.submitrow{display:flex;gap:9px;margin-top:13px}.submitrow .primary{flex:1;padding:11px}.secondary{background:#0a1a21;border:1px solid #1b4149;border-radius:11px;color:#a8c6cb;padding:10px 14px}.feedback{min-height:28px;text-align:center;font-size:12px;color:var(--muted);padding-top:10px}.feedback.good{color:var(--green)}.feedback.bad{color:var(--red)}.inventory{margin-top:auto;padding-top:18px}.inventoryhead{display:flex;justify-content:space-between;font-size:12px;color:#b8d2d6;margin-bottom:10px}.inventoryhead small{color:var(--muted)}.items{display:flex;gap:8px;flex-wrap:wrap}.item{flex:1;min-width:70px;border:1px solid #173b44;border-radius:12px;padding:10px 6px;background:#07171d;text-align:center;color:#d5e9eb;font-size:11px}.item .itemicon{font-size:22px;display:block;margin-bottom:4px}.item.locked{opacity:.35;filter:grayscale(1)}.item.found{border-color:#a8793d;background:#211a12;color:#f3d2a1}.sponsor{margin-top:16px;border:1px solid #8d7044;border-radius:17px;padding:17px 22px;background:linear-gradient(100deg,#090f12,#12140f,#080f13);display:grid;grid-template-columns:1fr 2fr 1fr;align-items:center;gap:16px}.sponsorlogo{direction:ltr;color:#f0d0a0;font-size:14px;letter-spacing:2px;font-weight:800}.sponsorlogo small{display:block;font-size:9px;letter-spacing:4px;font-weight:500}.sponsorcopy{text-align:center;font-size:12px;line-height:2;color:#d5d8d2}.sponsorcopy strong{display:block;color:#f0d0a0;font-size:14px}.sponsorphone{text-align:left;color:#f0d0a0;font-weight:800;direction:rtl;font-size:13px}.sponsorphone small{display:block;color:#a8aaa2;font-weight:400;font-size:10px}.overlay{position:fixed;inset:0;background:#02070be8;backdrop-filter:blur(12px);z-index:10;display:none;place-items:center;padding:20px}.overlay.show{display:grid}.modal{width:min(500px,100%);border:1px solid #23606a;border-radius:22px;padding:28px;background:linear-gradient(145deg,#0d252e,#050d12);box-shadow:0 0 80px #11b8c122;text-align:center}.modal .big{font-size:48px}.modal h2{margin:8px 0}.modal p{color:#aac3c8;font-size:13px;line-height:2}.modal .actions{display:flex;gap:10px;justify-content:center;margin-top:18px}.hidden{display:none!important}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);padding:10px 16px;border:1px solid #24606a;border-radius:12px;background:#07171d;color:#d8fbfc;font-size:12px;z-index:20;opacity:0;transition:.2s;pointer-events:none}.toast.show{opacity:1}.scanline{position:absolute;inset:0;pointer-events:none;opacity:.09;background:repeating-linear-gradient(0deg,transparent,transparent 3px,#50e9f0 4px);mix-blend-mode:screen}.muted{color:var(--muted)}@media(max-width:900px){.layout{grid-template-columns:1fr}.hero{min-height:570px}.gamepanel{min-height:620px}.sponsor{grid-template-columns:1fr 2fr;}.sponsorphone{grid-column:1/-1;text-align:center;border-top:1px solid #443b2a;padding-top:10px}}@media(max-width:520px){.shell{padding:10px}.topbar{margin-bottom:10px}.hero{min-height:520px;padding:22px 18px}.game-title{font-size:48px}.hero-bottom{gap:5px}.feature{font-size:10px}.feature b{font-size:11px}.gamepanel{padding:11px;min-height:610px}.mission{padding:16px}.mission h2{font-size:20px}.slot{width:38px;height:45px}.sponsor{padding:14px;grid-template-columns:1fr;text-align:center;gap:8px}.sponsorlogo{text-align:center}.sponsorcopy{font-size:11px}.sponsorphone{grid-column:auto}.topactions .iconbtn{width:38px;height:38px}.brandname{font-size:12px}}
+</style></head>
+<body><div class="shell">
+<header class="topbar"><div class="brand"><div class="brandmark">⌁</div><div class="brandname">CODE HUNTER <small>شکارچی رمز / پرونده‌های سری</small></div></div><div class="topactions"><button class="iconbtn" id="soundBtn" title="صدای محیط" aria-label="صدای محیط">♫</button><button class="iconbtn" id="resetBtn" title="شروع دوباره" aria-label="شروع دوباره">↻</button><button class="iconbtn" id="helpBtn" title="راهنما" aria-label="راهنما">?</button></div></header>
+<main class="layout"><section class="hero"><div class="hero-art"></div><div class="eyebrow">CLASSIFIED SYSTEM / 07-A</div><div class="titlewrap"><div class="fingerprint">◎</div><h1 class="game-title">شکارچی رمز</h1><div class="english">CODE HUNTER</div><p class="tagline">رمزها را پیدا کن...<br>تا حقیقت آشکار شود.</p><button class="primary startbtn" id="startBtn">شروع بازی <span> ◂</span></button></div><div class="hero-bottom"><div class="feature"><b>◈ مراحل متنوع</b>معماهای زنجیره‌ای</div><div class="feature"><b>♜ امتیاز و رکورد</b>پیشرفت ذخیره‌شونده</div><div class="feature"><b>◷ زمان محدود</b>هر ثانیه مهم است</div></div></section>
+<section class="gamepanel"><div class="panelhead"><div class="stage" id="stageName">آماده‌سازی عملیات<small id="stageSub">برای شروع، وارد سیستم شو</small></div><div class="coin">◉ <span id="score">000</span></div></div><div class="progress"><span id="progress"></span></div><div class="mission"><div class="label" id="missionLabel">MISSION / 01</div><h2 id="missionTitle">سیگنال ناشناس</h2><p id="missionText">یک پیام رمزگذاری‌شده در سیستم دریافت شده. چهار رقم، دروازه ورود به پرونده بعدی را باز می‌کند.</p><div class="hint" id="hintText">راهنما: به ترتیب اعداد در پیام دقت کن.</div></div><div class="codebox"><div class="codehead"><b>کد دسترسی را وارد کن</b><span id="timerLabel">زمان: 45 ثانیه</span></div><div class="slots" id="slots"><div class="slot"></div><div class="slot"></div><div class="slot"></div><div class="slot"></div></div><div class="keypad" id="keypad"><button class="key" data-key="1">1</button><button class="key" data-key="2">2</button><button class="key" data-key="3">3</button><button class="key" data-key="4">4</button><button class="key" data-key="5">5</button><button class="key" data-key="6">6</button><button class="key" data-key="7">7</button><button class="key" data-key="8">8</button><button class="key" data-key="9">9</button><button class="key special" data-key="clear">پاک</button><button class="key" data-key="0">0</button><button class="key special" data-key="back">⌫</button></div><div class="submitrow"><button class="primary" id="submitBtn">تأیید رمز</button><button class="secondary" id="hintBtn">راهنمایی</button></div><div class="feedback" id="feedback" aria-live="polite">برای شروع بازی، دکمه «شروع بازی» را بزن.</div></div><div class="inventory"><div class="inventoryhead"><b>موجودی شما</b><small id="foundCount">۰ از ۵ مدرک</small></div><div class="items" id="items"><div class="item locked"><span class="itemicon">▤</span>یادداشت</div><div class="item locked"><span class="itemicon">⌕</span>اثر انگشت</div><div class="item locked"><span class="itemicon">▣</span>فلش رمزدار</div><div class="item locked"><span class="itemicon">▧</span>عکس</div><div class="item locked"><span class="itemicon">◉</span>نشان</div></div></div></section></main>
+<footer class="sponsor"><div class="sponsorlogo">ROBЕRAH SERVICE<small>HOME APPLIANCE SERVICES</small></div><div class="sponsorcopy"><strong>زمان در دست شماست.</strong>روبراه سرویس؛ همراه شما در خدمات نصب، گارانتی و تعمیر لوازم خانگی.</div><div class="sponsorphone"><small>تماس با خدمات</small>02168287</div></footer>
+</div><div class="overlay" id="overlay"><div class="modal"><div class="big" id="modalIcon">⌁</div><h2 id="modalTitle">آماده‌ای؟</h2><p id="modalText">پرونده‌ها منتظر تو هستند.</p><div class="actions"><button class="primary" id="modalPrimary">ادامه</button><button class="secondary" id="modalSecondary">بستن</button></div></div></div><div class="toast" id="toast"></div>
 <script>
-const $=id=>document.getElementById(id);
-const fa=n=>String(n).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
-let found=[false,false,false], selected=-1, done=false, points=+(localStorage.cz_score||0), solved=+(localStorage.cz_solved||0);
-function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$(id).classList.add('active');window.scrollTo(0,0);if(id==='scores'){ $('scoreDisplay').textContent=fa(points);$('rankDisplay').textContent='رتبه: '+(points>=200?'خبره':points>=100?'کارآگاه':'تازه‌کار')}}
-function start(){found=[false,false,false];selected=-1;done=false;['d0','d1','d2'].forEach(id=>$(id).classList.remove('show'));$('bar').style.width='0';$('clueCount').textContent='۰/۳';$('next').disabled=true;$('result').className='toast';$('again').style.display='none';document.querySelectorAll('#game .person,#accuse .person').forEach(b=>{b.classList.remove('selected');b.disabled=false});$('picked').textContent='برای بازجویی، یک مظنون انتخاب کن.';show('game')}
-function reveal(i){found[i]=true;$('d'+i).classList.add('show');document.querySelectorAll('#game .clue')[i].classList.add('active');let n=found.filter(Boolean).length;$('clueCount').textContent=fa(n)+'/۳';$('bar').style.width=(n/3*100)+'%';$('next').disabled=n<3}
-const names=['کامران','نرگس','سامان','بهرام'], roles=['سرپرست ایستگاه','مسئول فروش بلیت','تکنسین سکو','نگهبان شب'];
-function pick(i){selected=i;document.querySelectorAll('#game .person').forEach((b,n)=>b.classList.toggle('selected',n===i));$('picked').textContent=names[i]+' · '+roles[i];$('intTitle').textContent='بازجویی از '+names[i];}
-function stage(id){show(id)}
-function ask(i){if(selected<0){$('intFeedback').className='toast show bad';$('intFeedback').textContent='ابتدا از صفحه پرونده یک مظنون انتخاب کن.';return}let answers=[
- ['من بعد از یازده و پنجاه آنجا نبودم.','کارت من روی میز بود؛ شاید کسی آن را برداشته.','جلیقه زرد برای کارکنان سکو است.'],
- ['تمام شب پشت باجه بودم.','من اجازه ورود به اتاق کنترل ندارم.','من جلیقه زرد نمی‌پوشم.'],
- ['من تجهیزات سکو را بررسی می‌کردم.','کارت کنترل دست من نیست.','ممکن است جلیقه من در تصویر باشد؛ اما وارد اتاق نشدم.'],
- ['مشغول گشت شبانه بودم.','به کارت سرپرست دسترسی ندارم.','جلیقه زرد لباس کارکنان سکو است.']
-];$('reply').textContent=answers[selected][i];$('intFeedback').className='toast show';$('intFeedback').textContent='پاسخ ثبت شد؛ آن را با مدارک مقایسه کن.'}
-function accuse(i){if(done)return;done=true;let r=$('result');r.className='toast show';if(i===2){points+=100;solved++;localStorage.cz_score=points;localStorage.cz_solved=solved;r.classList.add('good');r.innerHTML='<b>پرونده حل شد!</b><br>سامان، تکنسین سکو، با شواهد موجود بیشترین تطابق را دارد. جلیقه زرد و رد کفش مسیر حضور او را نشان می‌دهند.<br><br>پاداش: ۱۰۰ امتیاز';}else{r.classList.add('bad');r.innerHTML='<b>اتهام تأیید نشد.</b><br>این انتخاب با تمام سرنخ‌ها مطابقت ندارد. مدارک را دوباره بررسی کن؛ پاسخ این پرونده سامان است.'}document.querySelectorAll('#accuse .person').forEach(b=>b.disabled=true);$('again').style.display='block'}
-let ctx,master,on=false;
-function toggleSound(){on=!on;$('sound').textContent=on?'♫ صدا روشن':'♫ صدا خاموش';if(on){const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;if(!ctx){ctx=new AC();master=ctx.createGain();master.gain.value=.15;master.connect(ctx.destination);[55,82.4,110].forEach((hz,i)=>{let o=ctx.createOscillator(),g=ctx.createGain(),f=ctx.createBiquadFilter();o.type=i===1?'triangle':'sine';o.frequency.value=hz;f.type='lowpass';f.frequency.value=180;g.gain.value=[.25,.08,.04][i];o.connect(f);f.connect(g);g.connect(master);o.start()});}ctx.resume();master.gain.setTargetAtTime(.15,ctx.currentTime,.4)}else if(ctx){master.gain.setTargetAtTime(.0001,ctx.currentTime,.2)}}
-</script>
-</body>
-</html>
+(()=>{'use strict';
+const missions=[
+{title:'سیگنال ناشناس',sub:'منبع پیام: ترمینال 07-A',label:'MISSION / 01',text:'یک پیام رمزگذاری‌شده در سیستم دریافت شده. چهار رقم، دروازه ورود به پرونده بعدی را باز می‌کند.',hint:'راهنما: عددها را از کوچک به بزرگ مرتب کن: 9، 2، 6، 4.',answer:'2469',success:'سیگنال رمزگشایی شد. یک پرونده محرمانه در حافظه پنهان پیدا شد.',item:0,points:100,time:45},
+{title:'پرونده نیمه‌شب',sub:'دسترسی: طبقه محرمانه',label:'MISSION / 02',text:'روی برگه‌ای نوشته شده: «من دو برابر 7 هستم، به‌علاوه 3؛ اما برای ورود، رقم‌ها را برعکس کن.»',hint:'راهنما: اول محاسبه کن، بعد جای رقم‌ها را عوض کن.',answer:'71',length:2,success:'یادداشت باز شد. اثر انگشت ناشناس به پرونده اضافه شد.',item:1,points:150,time:40},
+{title:'فلش رمزدار',sub:'دستگاه آفلاین / USB-3',label:'MISSION / 03',text:'رمز از یک الگوی عددی پیروی می‌کند: 3، 6، 12، 24، ؟ عدد بعدی چیست؟',hint:'راهنما: هر عدد با یک عمل ثابت به عدد بعدی تبدیل می‌شود.',answer:'48',length:2,success:'فایل‌های مخفی بازیابی شدند. سرنخ تازه‌ای پیدا شد.',item:2,points:200,time:35},
+{title:'عکس تار',sub:'تصویر بازیابی‌شده / 04',label:'MISSION / 04',text:'روی عکس چهار رقم دیده می‌شود. رقم اول 1 است. رقم دوم دو برابر اول، رقم سوم جمع دو رقم قبلی و رقم چهارم اختلاف دو رقم اول است.',hint:'راهنما: محاسبات را به‌ترتیب انجام بده؛ برای رقم آخر اختلاف مثبت را در نظر بگیر.',answer:'1231',success:'هویت صاحب عکس مشخص شد. آخرین قفل در انتظار توست.',item:3,points:250,time:30},
+{title:'قفل نهایی',sub:'هسته مرکزی / دسترسی نهایی',label:'MISSION / 05',text:'آخرین قفل: مجموع رقم‌های رمزهای قبلی را به خاطر بیاور. مجموع چهار رقم رمز اول را با مجموع رقم‌های رمز دوم و سوم جمع کن.',hint:'راهنما: رمزهای قبلی به‌ترتیب 2469، 71 و 48 بودند. مجموع رقم‌های هرکدام را حساب کن؛ بعد سه مجموع را با هم جمع کن.',answer:'41',success:'تمام قفل‌ها باز شدند. تو پرونده را کامل کردی؛ شکارچی رمز!',item:4,points:500,time:40}
+];
+let stage=0,entry='',score=0,timeLeft=45,timer=null,active=false,found=new Set(),soundOn=false,audio=null,record=Number(localStorage.getItem('codeHunterBest')||0),hintsUsed=0;
+const $=id=>document.getElementById(id);const fa=n=>String(n).replace(/[0-9]/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
+function toast(t){$('toast').textContent=t;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2200)}
+function tone(freq=660,duration=.09,type='sine'){if(!soundOn)return;try{audio=audio||new(window.AudioContext||window.webkitAudioContext)();const o=audio.createOscillator(),g=audio.createGain();o.type=type;o.frequency.value=freq;g.gain.value=.045;o.connect(g);g.connect(audio.destination);o.start();g.gain.exponentialRampToValueAtTime(.001,audio.currentTime+duration);o.stop(audio.currentTime+duration)}catch(e){}}
+function setFeedback(t,type=''){const el=$('feedback');el.textContent=t;el.className='feedback '+type}
+function stopTimer(){if(timer){clearInterval(timer);timer=null}}
+function startTimer(){stopTimer();timeLeft=missions[stage].time;renderTimer();timer=setInterval(()=>{if(!active)return;timeLeft--;renderTimer();if(timeLeft<=0){stopTimer();active=false;setFeedback('زمان تمام شد. این مرحله را دوباره امتحان کن.','bad');$('submitBtn').disabled=true;tone(180,.3,'sawtooth');showModal('⌛','زمان تمام شد','نگران نباش؛ می‌توانی همین مرحله را از نو شروع کنی. امتیاز مراحل قبلی حفظ می‌شود.','تلاش دوباره',()=>{active=true;entry='';render();$('hintText').style.display='block';$('submitBtn').disabled=false;startTimer();hideModal()})}},1000)}
+function renderTimer(){$('timerLabel').textContent='زمان: '+fa(Math.max(0,timeLeft))+' ثانیه';$('timerLabel').style.color=timeLeft<=10?'var(--red)':'var(--muted)'}
+function renderSlots(){const length=missions[stage].length||4;$('slots').innerHTML='';for(let i=0;i<length;i++){const s=document.createElement('div');s.className='slot'+(entry[i]?' filled':'');s.textContent=entry[i]||'';$('slots').appendChild(s)}}
+function renderItems(){const names=['یادداشت','اثر انگشت','فلش رمزدار','عکس','نشان'];const icons=['▤','⌕','▣','▧','◉'];$('items').innerHTML=names.map((n,i)=>`<div class="item ${found.has(i)?'found':'locked'}"><span class="itemicon">${icons[i]}</span>${n}</div>`).join('');$('foundCount').textContent=fa(found.size)+' از ۵ مدرک'}
+function render(){const m=missions[stage];$('stageName').childNodes[0].textContent='مرحله '+fa(stage+1)+' از ۵';$('stageSub').textContent=m.sub;$('missionLabel').textContent=m.label;$('missionTitle').textContent=m.title;$('missionText').textContent=m.text;$('hintText').textContent=m.hint;$('hintText').style.display='none';$('score').textContent=fa(String(score).padStart(3,'0'));$('progress').style.width=(stage/5*100)+'%';entry='';renderSlots();renderItems();$('submitBtn').disabled=!active;setFeedback(active?'کد را وارد کن و تأیید بزن.':'برای شروع بازی، دکمه «شروع بازی» را بزن.');renderTimer()}
+function begin(){if(stage>=missions.length){stage=0;score=0;found.clear();hintsUsed=0}active=true;$('startBtn').textContent='بازی در حال اجراست';$('startBtn').disabled=true;render();$('hintText').style.display='block';$('submitBtn').disabled=false;startTimer();tone(520,.12);toast('عملیات آغاز شد')}
+function enterKey(k){if(!active)return;if(k==='clear')entry='';else if(k==='back')entry=entry.slice(0,-1);else if(entry.length<(missions[stage].length||4))entry+=k;renderSlots();tone(400,.04)}
+function submit(){if(!active)return;const m=missions[stage];if(entry.length!==(m.length||4)){setFeedback('ابتدا تمام رقم‌های رمز را وارد کن.','bad');tone(190,.1);return}if(entry===m.answer){stopTimer();active=false;score+=m.points+(timeLeft*2)-(hintsUsed?20:0);found.add(m.item);$('score').textContent=fa(String(score).padStart(3,'0'));$('progress').style.width=((stage+1)/5*100)+'%';renderItems();setFeedback(m.success,'good');tone(780,.16);setTimeout(()=>{if(stage<missions.length-1){showModal('✓','مرحله با موفقیت انجام شد',m.success+' امتیاز این مرحله: '+fa(m.points)+'.','رفتن به مرحله بعد',()=>{stage++;active=true;render();$('hintText').style.display='block';$('submitBtn').disabled=false;startTimer();hideModal()})}else{const best=Math.max(score,record);localStorage.setItem('codeHunterBest',String(best));record=best;showModal('★','پرونده کامل شد!',`امتیاز نهایی تو ${fa(score)} است. رکورد ذخیره‌شده: ${fa(record)}. می‌خواهی دوباره بازی کنی؟`,'شروع دوباره',()=>{stage=0;score=0;found.clear();hintsUsed=0;active=true;render();$('hintText').style.display='block';$('submitBtn').disabled=false;startTimer();hideModal()})}},500)}else{setFeedback('رمز اشتباه است. سرنخ‌ها را دوباره بررسی کن.','bad');tone(160,.18,'triangle');entry='';renderSlots()}}
+function showModal(icon,title,text,primary,action){$('modalIcon').textContent=icon;$('modalTitle').textContent=title;$('modalText').textContent=text;$('modalPrimary').textContent=primary;$('overlay').classList.add('show');$('modalPrimary').onclick=action}
+function hideModal(){$('overlay').classList.remove('show')}
+$('startBtn').addEventListener('click',begin);$('keypad').addEventListener('click',e=>{const b=e.target.closest('button[data-key]');if(b)enterKey(b.dataset.key)});$('submitBtn').addEventListener('click',submit);$('hintBtn').addEventListener('click',()=>{if(!active)return;hintsUsed++;$('hintText').style.display='block';setFeedback('راهنما نمایش داده شد؛ در پایان ۲۰ امتیاز کمتر می‌گیری.');tone(500,.08)});$('modalSecondary').addEventListener('click',hideModal);$('helpBtn').addEventListener('click',()=>showModal('ⓘ','راهنمای شکارچی رمز','هر مرحله یک رمز دارد. با صفحه‌کلید رقم‌ها را وارد کن و تأیید بزن. جواب درست تو را به مرحله بعد می‌برد. زمان باقی‌مانده و استفاده از راهنما روی امتیازت اثر می‌گذارند.','متوجه شدم',hideModal));$('resetBtn').addEventListener('click',()=>showModal('↻','شروع دوباره؟','پیشرفت همین دور از نو آغاز می‌شود. رکورد قبلی تو حفظ خواهد شد.','شروع دوباره',()=>{stopTimer();stage=0;score=0;found.clear();hintsUsed=0;active=true;render();$('hintText').style.display='block';$('submitBtn').disabled=false;$('startBtn').disabled=true;startTimer();hideModal()}));$('soundBtn').addEventListener('click',()=>{soundOn=!soundOn;$('soundBtn').textContent=soundOn?'♫✓':'♫';if(soundOn){tone(600,.1);toast('صدای افکت فعال شد')}else toast('صدای افکت خاموش شد')});document.addEventListener('keydown',e=>{if(e.key>='0'&&e.key<='9')enterKey(e.key);if(e.key==='Backspace')enterKey('back');if(e.key==='Enter')submit();if(e.key==='Escape')hideModal()});
+render();
+})();
+</script></body></html>
